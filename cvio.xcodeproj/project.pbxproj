@@ -1,0 +1,70 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXGroup section */
+		DB9118DA1F7C576200C6CF5F = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+			usesTabs = 1;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		DB9118DB1F7C576200C6CF5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CVIO;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = TeskaLabs;
+			};
+			buildConfigurationList = DB9118DE1F7C576200C6CF5F /* Build configuration list for PBXProject "cvio" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DB9118DA1F7C576200C6CF5F;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		DB9118DF1F7C576200C6CF5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB9118E01F7C576200C6CF5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB9118DE1F7C576200C6CF5F /* Build configuration list for PBXProject "cvio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9118DF1F7C576200C6CF5F /* Debug */,
+				DB9118E01F7C576200C6CF5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB9118DB1F7C576200C6CF5F /* Project object */;
+}
