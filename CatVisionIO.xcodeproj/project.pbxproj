@@ -11,6 +11,7 @@
 		DB8628991F7D77B300849DFB /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628981F7D77B300849DFB /* jmemnobs.c */; };
 		DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
 		DB86289C1F7D794800849DFB /* SeaCatiOSClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBBFC0781F7D55D400BB0ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0771F7D55D400BB0ABD /* AppDelegate.m */; };
 		DBBFC07B1F7D55D400BB0ABD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC07A1F7D55D400BB0ABD /* MainViewController.m */; };
 		DBBFC07E1F7D55D400BB0ABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBFC07C1F7D55D400BB0ABD /* Main.storyboard */; };
@@ -117,6 +118,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */,
 				DB86289C1F7D794800849DFB /* SeaCatiOSClient.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
