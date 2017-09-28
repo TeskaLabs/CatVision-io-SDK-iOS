@@ -12,6 +12,8 @@
 		DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
 		DB86289C1F7D794800849DFB /* SeaCatiOSClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB86289F1F7D83F000849DFB /* arm_init.c in Sources */ = {isa = PBXBuildFile; fileRef = DB86289E1F7D83F000849DFB /* arm_init.c */; };
+		DB8628A11F7D842900849DFB /* filter_neon_intrinsics.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */; };
 		DBBFC0781F7D55D400BB0ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0771F7D55D400BB0ABD /* AppDelegate.m */; };
 		DBBFC07B1F7D55D400BB0ABD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC07A1F7D55D400BB0ABD /* MainViewController.m */; };
 		DBBFC07E1F7D55D400BB0ABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBFC07C1F7D55D400BB0ABD /* Main.storyboard */; };
@@ -130,6 +132,8 @@
 		DB6EE1E11F7C5D20009B028B /* ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios.h; sourceTree = "<group>"; };
 		DB6EE1E21F7C5D20009B028B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8628981F7D77B300849DFB /* jmemnobs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jmemnobs.c; path = jpeg/jmemnobs.c; sourceTree = "<group>"; };
+		DB86289E1F7D83F000849DFB /* arm_init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = arm_init.c; path = libpng/arm/arm_init.c; sourceTree = "<group>"; };
+		DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = filter_neon_intrinsics.c; path = libpng/arm/filter_neon_intrinsics.c; sourceTree = "<group>"; };
 		DBBFC0741F7D55D400BB0ABD /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBFC0761F7D55D400BB0ABD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DBBFC0771F7D55D400BB0ABD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 				DBBFC1351F7D6BA300BB0ABD /* pngwrite.c */,
 				DBBFC1391F7D6BA400BB0ABD /* pngwtran.c */,
 				DBBFC13A1F7D6BA400BB0ABD /* pngwutil.c */,
+				DB86289E1F7D83F000849DFB /* arm_init.c */,
+				DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */,
 			);
 			name = libpng;
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 				DBBFC1A11F7D6C6800BB0ABD /* jfdctfst.c in Sources */,
 				DBBFC1471F7D6BA400BB0ABD /* pngrtran.c in Sources */,
 				DBBFC1A41F7D6C6800BB0ABD /* jdcolor.c in Sources */,
+				DB86289F1F7D83F000849DFB /* arm_init.c in Sources */,
 				DBBFC1951F7D6C6800BB0ABD /* jerror.c in Sources */,
 				DBBFC1931F7D6C6800BB0ABD /* jccoefct.c in Sources */,
 				DBBFC17B1F7D6C6800BB0ABD /* jfdctflt.c in Sources */,
@@ -662,6 +669,7 @@
 				DBBFC1451F7D6BA400BB0ABD /* pngrutil.c in Sources */,
 				DBBFC1221F7D69BB00BB0ABD /* rfbregion.c in Sources */,
 				DBBFC10C1F7D698800BB0ABD /* corre.c in Sources */,
+				DB8628A11F7D842900849DFB /* filter_neon_intrinsics.c in Sources */,
 				DBBFC19F1F7D6C6800BB0ABD /* jdinput.c in Sources */,
 				DBBFC18D1F7D6C6800BB0ABD /* jdcoefct.c in Sources */,
 				DBBFC1831F7D6C6800BB0ABD /* jdapistd.c in Sources */,
