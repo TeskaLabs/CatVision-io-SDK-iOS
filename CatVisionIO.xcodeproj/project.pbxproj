@@ -16,6 +16,7 @@
 		DBBFC0831F7D55D400BB0ABD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBFC0811F7D55D400BB0ABD /* LaunchScreen.storyboard */; };
 		DBBFC0861F7D55D400BB0ABD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0851F7D55D400BB0ABD /* main.m */; };
 		DBBFC08A1F7D55E600BB0ABD /* CatVisionIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; };
+		DBBFC08C1F7D5D2100BB0ABD /* SeaCatiOSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		DBBFC0821F7D55D400BB0ABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBBFC0841F7D55D400BB0ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBBFC0851F7D55D400BB0ABD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeaCatiOSClient.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBBFC08C1F7D5D2100BB0ABD /* SeaCatiOSClient.framework in Frameworks */,
 				DB6EE1E91F7C5D6B009B028B /* libvncserver.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +79,7 @@
 		DB6EE1E71F7C5D6B009B028B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */,
 				DB6EE1E81F7C5D6B009B028B /* libvncserver.a */,
 			);
 			name = Frameworks;
@@ -297,6 +301,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -375,6 +383,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
