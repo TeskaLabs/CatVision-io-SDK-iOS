@@ -511,7 +511,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB6EE1E61F7C5D20009B028B /* Build configuration list for PBXNativeTarget "ios" */;
 			buildPhases = (
-				DBD6065E1F7E4AE700DFB3E7 /* ShellScript */,
 				DB6EE1D91F7C5D20009B028B /* Sources */,
 				DB6EE1DA1F7C5D20009B028B /* Frameworks */,
 				DB6EE1DB1F7C5D20009B028B /* Headers */,
@@ -551,6 +550,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBBFC0971F7D609A00BB0ABD /* Build configuration list for PBXNativeTarget "VNCServer" */;
 			buildPhases = (
+				DBD6065F1F7EF90500DFB3E7 /* ShellScript */,
 				DBBFC08D1F7D609A00BB0ABD /* Sources */,
 				DBBFC08E1F7D609A00BB0ABD /* Frameworks */,
 				DBBFC08F1F7D609A00BB0ABD /* Headers */,
@@ -637,7 +637,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DBD6065E1F7E4AE700DFB3E7 /* ShellScript */ = {
+		DBD6065F1F7EF90500DFB3E7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
