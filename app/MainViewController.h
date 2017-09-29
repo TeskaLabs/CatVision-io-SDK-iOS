@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
-
-
+- (IBAction)onStart:(id)sender;
 @end
 

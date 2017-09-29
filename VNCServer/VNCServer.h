@@ -14,6 +14,10 @@ FOUNDATION_EXPORT double VNCServerVersionNumber;
 //! Project version string for VNCServer.
 FOUNDATION_EXPORT const unsigned char VNCServerVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <VNCServer/PublicHeader.h>
+@interface VNCServer : NSObject
 
+- (id)init:(int)width height:(int)height;
+- (void)run;
+- (int)shutdown;
 
+@end

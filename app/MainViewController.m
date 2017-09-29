@@ -7,23 +7,31 @@
 //
 
 #import "MainViewController.h"
+#import "VNCServer.h"
 
 @interface MainViewController ()
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController {
+	VNCServer * vncserver;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+		
+	vncserver = [[VNCServer alloc] init:800 height:600];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)onStart:(id)sender {
+	[vncserver run];
+}
 
 @end

@@ -14,6 +14,11 @@
 		DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB86289F1F7D83F000849DFB /* arm_init.c in Sources */ = {isa = PBXBuildFile; fileRef = DB86289E1F7D83F000849DFB /* arm_init.c */; };
 		DB8628A11F7D842900849DFB /* filter_neon_intrinsics.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */; };
+		DB8628A31F7D861900849DFB /* CatVisionIO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB8628A71F7D865100849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
+		DB8628A81F7D865100849DFB /* VNCServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB8628AB1F7D866F00849DFB /* SeaCatiOSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */; };
+		DB8628AC1F7D866F00849DFB /* SeaCatiOSClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBBFC0781F7D55D400BB0ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0771F7D55D400BB0ABD /* AppDelegate.m */; };
 		DBBFC07B1F7D55D400BB0ABD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC07A1F7D55D400BB0ABD /* MainViewController.m */; };
 		DBBFC07E1F7D55D400BB0ABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBFC07C1F7D55D400BB0ABD /* Main.storyboard */; };
@@ -111,7 +116,25 @@
 		DBBFC1AD1F7D6DF100BB0ABD /* turbojpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1A91F7D6DF100BB0ABD /* turbojpeg.c */; };
 		DBBFC1AE1F7D6DF100BB0ABD /* d3des.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1AA1F7D6DF100BB0ABD /* d3des.c */; };
 		DBBFC1AF1F7D6DF100BB0ABD /* vncauth.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1AB1F7D6DF100BB0ABD /* vncauth.c */; };
+		DBD6065D1F7D9EE700DFB3E7 /* VNCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD6065C1F7D9EE700DFB3E7 /* VNCServer.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB8628A41F7D861900849DFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6EE1DD1F7C5D20009B028B;
+			remoteInfo = ios;
+		};
+		DB8628A91F7D865100849DFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBBFC0911F7D609A00BB0ABD;
+			remoteInfo = VNCServer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DB86289B1F7D793B00849DFB /* CopyFiles */ = {
@@ -123,6 +146,19 @@
 				DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */,
 				DB86289C1F7D794800849DFB /* SeaCatiOSClient.framework in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8628A61F7D861900849DFB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB8628A31F7D861900849DFB /* CatVisionIO.framework in Embed Frameworks */,
+				DB8628A81F7D865100849DFB /* VNCServer.framework in Embed Frameworks */,
+				DB8628AC1F7D866F00849DFB /* SeaCatiOSClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -236,6 +272,7 @@
 		DBBFC1A91F7D6DF100BB0ABD /* turbojpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = turbojpeg.c; path = libvncserver/common/turbojpeg.c; sourceTree = "<group>"; };
 		DBBFC1AA1F7D6DF100BB0ABD /* d3des.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = d3des.c; path = libvncserver/common/d3des.c; sourceTree = "<group>"; };
 		DBBFC1AB1F7D6DF100BB0ABD /* vncauth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vncauth.c; path = libvncserver/common/vncauth.c; sourceTree = "<group>"; };
+		DBD6065C1F7D9EE700DFB3E7 /* VNCServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VNCServer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBBFC08A1F7D55E600BB0ABD /* CatVisionIO.framework in Frameworks */,
+				DB8628A71F7D865100849DFB /* VNCServer.framework in Frameworks */,
+				DB8628AB1F7D866F00849DFB /* SeaCatiOSClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +367,7 @@
 				DBBFC12E1F7D6B1F00BB0ABD /* libpng */,
 				DBBFC0FC1F7D673200BB0ABD /* libvncserver */,
 				DBBFC0941F7D609A00BB0ABD /* VNCServer.h */,
+				DBD6065C1F7D9EE700DFB3E7 /* VNCServer.m */,
 				DBBFC0951F7D609A00BB0ABD /* Info.plist */,
 			);
 			path = VNCServer;
@@ -494,10 +534,13 @@
 				DBBFC0701F7D55D400BB0ABD /* Sources */,
 				DBBFC0711F7D55D400BB0ABD /* Frameworks */,
 				DBBFC0721F7D55D400BB0ABD /* Resources */,
+				DB8628A61F7D861900849DFB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB8628A51F7D861900849DFB /* PBXTargetDependency */,
+				DB8628AA1F7D865100849DFB /* PBXTargetDependency */,
 			);
 			name = app;
 			productName = app;
@@ -684,6 +727,7 @@
 				DBBFC1871F7D6C6800BB0ABD /* jdhuff.c in Sources */,
 				DBBFC1891F7D6C6800BB0ABD /* jfdctint.c in Sources */,
 				DBBFC1811F7D6C6800BB0ABD /* jctrans.c in Sources */,
+				DBD6065D1F7D9EE700DFB3E7 /* VNCServer.m in Sources */,
 				DBBFC1451F7D6BA400BB0ABD /* pngrutil.c in Sources */,
 				DBBFC1221F7D69BB00BB0ABD /* rfbregion.c in Sources */,
 				DBBFC10C1F7D698800BB0ABD /* corre.c in Sources */,
