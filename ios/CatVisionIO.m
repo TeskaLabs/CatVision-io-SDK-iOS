@@ -18,6 +18,8 @@
 	BOOL mSeaCatCofigured;
 	BOOL mStarted;
 	CVIOSeaCatPlugin * plugin;
+	
+	UIImage * monoscope; //To be removed
 }
 
 + (instancetype)sharedInstance
@@ -48,6 +50,8 @@
 	//This is to enable SeaCat debug logging [SeaCatClient setLogMask:SC_LOG_FLAG_DEBUG_GENERIC];
 	plugin = [[CVIOSeaCatPlugin alloc] init:5900];
 	
+	monoscope = [UIImage imageNamed:@"Monoscope"];
+	
 	return self;
 }
 
@@ -57,10 +61,11 @@
 	
 	if (mVNCServer == nil)
 	{
-		mVNCServer = [[VNCServer new] init:socketAddress width:800 height:600];
+		CGSize size = [monoscope size];
+		mVNCServer = [[VNCServer new] init:self address:socketAddress width:size.width height:size.height];
 		if (mVNCServer == nil) return NO;
 	}
-	[mVNCServer run];
+	[mVNCServer start];
 	
 	// VNC Server started
 	if (mSeaCatCofigured == NO) //TODO: if (![SeaCatClient isConfigured])
@@ -80,6 +85,8 @@
 		}
 		NSLog(@"SeaCat is READY");
 		[SeaCatClient connect];
+		
+		[mVNCServer imageReady];
 	});
 
 	return YES;
@@ -103,6 +110,19 @@
 	return [csr submit:out_error];
 }
 
+-(int)takeImage
+{
+	CGImageRef image = [monoscope CGImage];
+	CGDataProviderRef provider = CGImageGetDataProvider(image);
+	CFDataRef data = CGDataProviderCopyData(provider);
+	
+	const unsigned char * buffer =  CFDataGetBytePtr(data);
+	ssize_t buffer_len = CFDataGetLength(data);
+	
+	[mVNCServer pushPixelsRGBA8888:buffer length:buffer_len row_stride:450*4];
+	
+	return 0;
+}
 
 @end
 

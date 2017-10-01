@@ -14,10 +14,22 @@ FOUNDATION_EXPORT double VNCServerVersionNumber;
 //! Project version string for VNCServer.
 FOUNDATION_EXPORT const unsigned char VNCServerVersionString[];
 
+@protocol VNCServerDelegate <NSObject>
+// Return value: 0 - image has been pushed to VNCServer.push(), 1 - VNC server is requested to shutdown immediately
+-(int)takeImage;
+@end
+
+
 @interface VNCServer : NSObject
 
-- (id)init:(NSString *)socketAddress width:(int)width height:(int)height;
-- (void)run;
-- (int)shutdown;
+@property (readonly) id<VNCServerDelegate> delegate;
+
+- (id)init:(id<VNCServerDelegate>)delegate address:(NSString *)socketAddress width:(int)width height:(int)height;
+- (void)start;
+- (void)stop;
+
+- (void)imageReady;
+
+- (void)pushPixelsRGBA8888:(const unsigned char *)buffer length:(ssize_t)length row_stride:(int)s_stride;
 
 @end

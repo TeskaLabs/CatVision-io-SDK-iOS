@@ -56,20 +56,23 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	void * myFb;
 	
 	NSString * mySocketAddress;
+	NSThread * myThread;
 	
 	rfbScreenInfoPtr myServerScreen;
 	
-	int serverShutdown;
+	int runPhase; // 0 .. idle, 1 .. starting, 2 .. running, 3 .. stopping
 	int imageReady;
 }
 
-- (id)init:(NSString *)socketAddress width:(int)width height:(int)height;
+- (id)init:(id<VNCServerDelegate>)delegate address:(NSString *)socketAddress width:(int)width height:(int)height
 {
 	self = [super init];
 	if (self == nil) return nil;
 
+	self->_delegate = delegate;
 	self->mySocketAddress = socketAddress;
-	self->serverShutdown = 0;
+	self->myThread = nil;
+	self->runPhase = 0;
 	self->imageReady = 0;
 
 	self->myWidth = width;
@@ -159,48 +162,104 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	}
 }
 
-- (void)run
+- (void)start
 {
-	//TODO: Prevent double-run
-	[NSThread detachNewThreadSelector: @selector(_run) toTarget:self withObject:NULL];
+	if (self->myThread != nil)
+	{
+		NSLog(@"VNCServer is already started");
+		return;
+	}
+
+	self->runPhase = 1;
+	self->myThread = [[NSThread alloc] initWithTarget:self selector:@selector(_run) object:nil];
+	[self->myThread start];
 }
 
 - (void)_run
 {
+	self->runPhase = 2;
+
 	while (rfbIsActive(self->myServerScreen))
 	{
 		if (self->imageReady != 0)
 		{
 			self->imageReady = 0;
-/*
-			 int ret = takeImage();
+
+			int ret = [_delegate takeImage];
 			if (ret != 0)
 			{
 				// takeImage() requested VNC server shutdown
-				serverShutdown = 1;
-				rfbShutdownServer(serverScreen, (1==1));
-				serverShutdown = 2;
-				continue;
+				self->runPhase = 3;
 			}
-*/
+
 		}
 		
 		long usec = self->myServerScreen->deferUpdateTime*1000;
 		rfbProcessEvents(self->myServerScreen, usec);
 		
-		if (serverShutdown == 1)
+		if (self->runPhase == 3)
 		{
 			rfbShutdownServer(self->myServerScreen, (1==1));
-			serverShutdown = 2;
 		}
 	}
+	
+	self->runPhase = 0;
+	self->myThread = nil;
 }
 
 
-- (int)shutdown
+- (void)stop
 {
-	//TODO: This ...
-	return 0;
+	if (self->runPhase == 2) self->runPhase = 3;
+}
+
+- (void)imageReady
+{
+	self->imageReady += 1;
+}
+
+- (void)pushPixelsRGBA8888:(const unsigned char *)buffer length:(ssize_t)len row_stride:(int)s_stride
+{
+	// This needs to be super-optimized!
+	// TODO: See NEON/SIMD optimisations in libyuv https://chromium.googlesource.com/libyuv/libyuv/+/master/source/row_neon64.cc
+	uint8_t * s = (uint8_t *)buffer;
+	uint16_t * t = (uint16_t *)myServerScreen->frameBuffer;
+	
+	int max_x=-1,max_y=-1, min_x=99999, min_y=99999;
+	
+	for (int y=0; y < myHeight; y+=1)
+	{
+		int tpos = (y * myLineStride) + myXOffset;
+		const int spos = y * s_stride;
+		
+		for (int x=0; x < myWidth; x+=1, tpos+=1)
+		{
+			const int si = spos + (x << 2); //2 is for 32bit
+			if ((si+2) >= len)
+			{
+				NSLog(@"VNCServer buffer overflow: %d vs %lu %dx%d spos:%d", si+2, len, x, y, spos);
+				return;
+			}
+			
+			const uint16_t r = s[si+0] >> 3;
+			const uint16_t g = s[si+1] >> 3;
+			const uint16_t b = s[si+2] >> 3;
+			
+			const uint16_t p = (b << 10) | (g << 5) | r;
+			
+			if (t[tpos] == p) continue; // No update needed
+			t[tpos] = p;
+			
+			if (x > max_x) max_x = x;
+			if (x < min_x) min_x = x;
+			if (y > max_y) max_y = y;
+			if (y < min_y) min_y = y;
+		}
+	}
+	
+	if (max_x == -1) return; // No update needed
+	
+	rfbMarkRectAsModified(myServerScreen, myXOffset + min_x, min_y, myXOffset + max_x + 1, max_y + 1);
 }
 
 @end
