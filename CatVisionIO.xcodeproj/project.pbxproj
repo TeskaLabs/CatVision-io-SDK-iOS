@@ -11,6 +11,8 @@
 		DB3EFDA31F80FC620070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
 		DB3EFDA41F80FC740070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
 		DB3EFDA91F80FDBA0070E432 /* SeaCatClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB3EFDAB1F810B100070E432 /* CVIOSeaCatPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EFDAA1F810B100070E432 /* CVIOSeaCatPlugin.m */; };
+		DB3EFDAD1F810BAC0070E432 /* CVIOSeaCatPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3EFDAC1F810BA40070E432 /* CVIOSeaCatPlugin.h */; };
 		DB6EE1E31F7C5D20009B028B /* CatVisionIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB8628991F7D77B300849DFB /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628981F7D77B300849DFB /* jmemnobs.c */; };
 		DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
@@ -166,6 +168,8 @@
 		DB1AEB781F805340003347EB /* CatVisionIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatVisionIO.m; sourceTree = "<group>"; };
 		DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeaCatClient.framework; sourceTree = "<group>"; };
 		DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeaCatClient.framework; sourceTree = "<group>"; };
+		DB3EFDAA1F810B100070E432 /* CVIOSeaCatPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVIOSeaCatPlugin.m; sourceTree = "<group>"; };
+		DB3EFDAC1F810BA40070E432 /* CVIOSeaCatPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVIOSeaCatPlugin.h; sourceTree = "<group>"; };
 		DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatVisionIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatVisionIO.h; sourceTree = "<group>"; };
 		DB6EE1E21F7C5D20009B028B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -319,9 +323,11 @@
 		DB6EE1E01F7C5D20009B028B /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				DB6EE1E21F7C5D20009B028B /* Info.plist */,
 				DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */,
 				DB1AEB781F805340003347EB /* CatVisionIO.m */,
-				DB6EE1E21F7C5D20009B028B /* Info.plist */,
+				DB3EFDAC1F810BA40070E432 /* CVIOSeaCatPlugin.h */,
+				DB3EFDAA1F810B100070E432 /* CVIOSeaCatPlugin.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB6EE1E31F7C5D20009B028B /* CatVisionIO.h in Headers */,
+				DB3EFDAD1F810BAC0070E432 /* CVIOSeaCatPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3EFDAB1F810B100070E432 /* CVIOSeaCatPlugin.m in Sources */,
 				DB1AEB791F805340003347EB /* CatVisionIO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
