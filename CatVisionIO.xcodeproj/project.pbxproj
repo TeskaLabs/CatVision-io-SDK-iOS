@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB6EE1E31F7C5D20009B028B /* ios.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6EE1E11F7C5D20009B028B /* ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB1AEB791F805340003347EB /* CatVisionIO.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1AEB781F805340003347EB /* CatVisionIO.m */; };
+		DB3EFDA31F80FC620070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
+		DB3EFDA41F80FC740070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
+		DB3EFDA91F80FDBA0070E432 /* SeaCatClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB6EE1E31F7C5D20009B028B /* CatVisionIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB8628991F7D77B300849DFB /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628981F7D77B300849DFB /* jmemnobs.c */; };
 		DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
-		DB86289C1F7D794800849DFB /* SeaCatiOSClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB86289F1F7D83F000849DFB /* arm_init.c in Sources */ = {isa = PBXBuildFile; fileRef = DB86289E1F7D83F000849DFB /* arm_init.c */; };
 		DB8628A11F7D842900849DFB /* filter_neon_intrinsics.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */; };
 		DB8628A31F7D861900849DFB /* CatVisionIO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB8628A71F7D865100849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
 		DB8628A81F7D865100849DFB /* VNCServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DB8628AB1F7D866F00849DFB /* SeaCatiOSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */; };
-		DB8628AC1F7D866F00849DFB /* SeaCatiOSClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBBFC0781F7D55D400BB0ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0771F7D55D400BB0ABD /* AppDelegate.m */; };
 		DBBFC07B1F7D55D400BB0ABD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC07A1F7D55D400BB0ABD /* MainViewController.m */; };
 		DBBFC07E1F7D55D400BB0ABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBFC07C1F7D55D400BB0ABD /* Main.storyboard */; };
@@ -26,7 +27,6 @@
 		DBBFC0831F7D55D400BB0ABD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBFC0811F7D55D400BB0ABD /* LaunchScreen.storyboard */; };
 		DBBFC0861F7D55D400BB0ABD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0851F7D55D400BB0ABD /* main.m */; };
 		DBBFC08A1F7D55E600BB0ABD /* CatVisionIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; };
-		DBBFC08C1F7D5D2100BB0ABD /* SeaCatiOSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */; };
 		DBBFC0961F7D609A00BB0ABD /* VNCServer.h in Headers */ = {isa = PBXBuildFile; fileRef = DBBFC0941F7D609A00BB0ABD /* VNCServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBBFC1071F7D698800BB0ABD /* draw.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0FD1F7D698700BB0ABD /* draw.c */; };
 		DBBFC1081F7D698800BB0ABD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0FE1F7D698700BB0ABD /* main.c */; };
@@ -144,7 +144,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */,
-				DB86289C1F7D794800849DFB /* SeaCatiOSClient.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +155,7 @@
 			files = (
 				DB8628A31F7D861900849DFB /* CatVisionIO.framework in Embed Frameworks */,
 				DB8628A81F7D865100849DFB /* VNCServer.framework in Embed Frameworks */,
-				DB8628AC1F7D866F00849DFB /* SeaCatiOSClient.framework in Embed Frameworks */,
+				DB3EFDA91F80FDBA0070E432 /* SeaCatClient.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,8 +163,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DB1AEB781F805340003347EB /* CatVisionIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatVisionIO.m; sourceTree = "<group>"; };
+		DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeaCatClient.framework; sourceTree = "<group>"; };
+		DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeaCatClient.framework; sourceTree = "<group>"; };
 		DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatVisionIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB6EE1E11F7C5D20009B028B /* ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios.h; sourceTree = "<group>"; };
+		DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatVisionIO.h; sourceTree = "<group>"; };
 		DB6EE1E21F7C5D20009B028B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8628981F7D77B300849DFB /* jmemnobs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jmemnobs.c; path = jpeg/jmemnobs.c; sourceTree = "<group>"; };
 		DB86289E1F7D83F000849DFB /* arm_init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = arm_init.c; path = libpng/arm/arm_init.c; sourceTree = "<group>"; };
@@ -180,7 +182,6 @@
 		DBBFC0821F7D55D400BB0ABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBBFC0841F7D55D400BB0ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBBFC0851F7D55D400BB0ABD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeaCatiOSClient.framework; sourceTree = "<group>"; };
 		DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VNCServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBFC0941F7D609A00BB0ABD /* VNCServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VNCServer.h; sourceTree = "<group>"; };
 		DBBFC0951F7D609A00BB0ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -281,7 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */,
-				DBBFC08C1F7D5D2100BB0ABD /* SeaCatiOSClient.framework in Frameworks */,
+				DB3EFDA31F80FC620070E432 /* SeaCatClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +292,7 @@
 			files = (
 				DBBFC08A1F7D55E600BB0ABD /* CatVisionIO.framework in Frameworks */,
 				DB8628A71F7D865100849DFB /* VNCServer.framework in Frameworks */,
-				DB8628AB1F7D866F00849DFB /* SeaCatiOSClient.framework in Frameworks */,
+				DB3EFDA41F80FC740070E432 /* SeaCatClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +319,8 @@
 		DB6EE1E01F7C5D20009B028B /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				DB6EE1E11F7C5D20009B028B /* ios.h */,
+				DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */,
+				DB1AEB781F805340003347EB /* CatVisionIO.m */,
 				DB6EE1E21F7C5D20009B028B /* Info.plist */,
 			);
 			path = ios;
@@ -327,7 +329,7 @@
 		DB6EE1E71F7C5D6B009B028B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DBBFC08B1F7D5D2100BB0ABD /* SeaCatiOSClient.framework */,
+				DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -335,6 +337,7 @@
 		DB9118DA1F7C576200C6CF5F = {
 			isa = PBXGroup;
 			children = (
+				DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */,
 				DB6EE1E01F7C5D20009B028B /* ios */,
 				DBBFC0751F7D55D400BB0ABD /* app */,
 				DBBFC0931F7D609A00BB0ABD /* VNCServer */,
@@ -351,8 +354,8 @@
 				DBBFC0771F7D55D400BB0ABD /* AppDelegate.m */,
 				DBBFC0791F7D55D400BB0ABD /* MainViewController.h */,
 				DBBFC07A1F7D55D400BB0ABD /* MainViewController.m */,
-				DBBFC07C1F7D55D400BB0ABD /* Main.storyboard */,
 				DBBFC07F1F7D55D400BB0ABD /* Assets.xcassets */,
+				DBBFC07C1F7D55D400BB0ABD /* Main.storyboard */,
 				DBBFC0811F7D55D400BB0ABD /* LaunchScreen.storyboard */,
 				DBBFC0841F7D55D400BB0ABD /* Info.plist */,
 				DBBFC0851F7D55D400BB0ABD /* main.m */,
@@ -492,7 +495,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB6EE1E31F7C5D20009B028B /* ios.h in Headers */,
+				DB6EE1E31F7C5D20009B028B /* CatVisionIO.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1AEB791F805340003347EB /* CatVisionIO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1173,6 +1177,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1243,6 +1248,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

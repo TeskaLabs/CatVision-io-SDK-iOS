@@ -7,31 +7,25 @@
 //
 
 #import "MainViewController.h"
-#import "VNCServer.h"
+#import "CatVisionIO/CatVisionIO.h"
+
+//
 
 @interface MainViewController ()
 
 @end
 
-@implementation MainViewController {
-	VNCServer * vncserver;
-}
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-		
-	vncserver = [[VNCServer alloc] init:800 height:600];
-}
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 
 - (IBAction)onStart:(id)sender {
-	[vncserver run];
+	[[CatVision sharedInstance] start];
 }
 
 @end

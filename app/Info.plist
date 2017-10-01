@@ -43,5 +43,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CVIOApiKeyId</key>
+	<string>QRWV-eLwmQ2PFHIRV1NwhQ</string>
 </dict>
 </plist>
