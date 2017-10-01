@@ -6,8 +6,13 @@
 //  Copyright © 2017 TeskaLabs. All rights reserved.
 //
 
-#ifndef CVIOSeaCatPlugin_h
-#define CVIOSeaCatPlugin_h
+#import <SeaCatClient/SeaCatClient.h>
 
+@interface CVIOSeaCatPlugin : SeaCatPlugin
 
-#endif /* CVIOSeaCatPlugin_h */
+- (CVIOSeaCatPlugin *)init:(int)port;
+- (void)configureSocket:(NSString *)socketAddress;
+- (NSDictionary *)getCharacteristics;
+
+@end
+

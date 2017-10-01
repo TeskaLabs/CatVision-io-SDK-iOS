@@ -16,7 +16,7 @@ FOUNDATION_EXPORT const unsigned char VNCServerVersionString[];
 
 @interface VNCServer : NSObject
 
-- (id)init:(int)width height:(int)height;
+- (id)init:(NSString *)socketAddress width:(int)width height:(int)height;
 - (void)run;
 - (int)shutdown;
 

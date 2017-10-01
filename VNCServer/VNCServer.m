@@ -15,6 +15,37 @@
 
 static int rfbListenOnUNIXPort(const char * path);
 
+///////
+
+static enum rfbNewClientAction newClientHook(rfbClientPtr cl)
+{
+	//TODO: This ...
+	NSLog(@"New VNC client accepted.");
+	return RFB_CLIENT_ACCEPT;
+}
+
+static void ptrAddEvent(int buttonMask, int x, int y, rfbClientPtr cl)
+{
+	//TODO: This ...
+}
+
+static void kbdAddEvent(rfbBool down, rfbKeySym keySym, struct _rfbClientRec* cl)
+{
+	//TODO: This ...
+}
+
+static void kbdReleaseAllKeys(struct _rfbClientRec* cl)
+{
+	//TODO: This ...
+}
+
+static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
+{
+	//TODO: This ...
+}
+
+/////
+
 @implementation VNCServer {
 	int myWidth;
 	int myHeight;
@@ -24,23 +55,20 @@ static int rfbListenOnUNIXPort(const char * path);
 	size_t myFbLength;
 	void * myFb;
 	
+	NSString * mySocketAddress;
+	
 	rfbScreenInfoPtr myServerScreen;
 	
 	int serverShutdown;
 	int imageReady;
-	
-	NSMutableString *mySockAddress;
 }
 
-- (id)init:(int)width height:(int)height
+- (id)init:(NSString *)socketAddress width:(int)width height:(int)height;
 {
 	self = [super init];
 	if (self == nil) return nil;
 
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-	NSMutableString *mySockAddress = [[paths objectAtIndex:0] mutableCopy];
-	[mySockAddress appendString:@"/vnc.s"]; //TODO: socket name can be more unique - it will allow to start more than one VNC server if needed
-
+	self->mySocketAddress = socketAddress;
 	self->serverShutdown = 0;
 	self->imageReady = 0;
 
@@ -78,15 +106,15 @@ static int rfbListenOnUNIXPort(const char * path);
 	self->myServerScreen->udpPort=0;
 	self->myServerScreen->httpInitDone = (1==1);
 	
-	self->myServerScreen->newClientHook = NULL;
-	self->myServerScreen->ptrAddEvent = NULL;
-	self->myServerScreen->kbdAddEvent = NULL;
-	self->myServerScreen->kbdReleaseAllKeys = NULL;
-	self->myServerScreen->setXCutText = NULL;
+	self->myServerScreen->newClientHook = newClientHook;
+	self->myServerScreen->ptrAddEvent = ptrAddEvent;
+	self->myServerScreen->kbdAddEvent = kbdAddEvent;
+	self->myServerScreen->kbdReleaseAllKeys = kbdReleaseAllKeys;
+	self->myServerScreen->setXCutText = setXCutText;
 	
 	rfbInitServer(self->myServerScreen);
 
-	self->myServerScreen->listenSock = rfbListenOnUNIXPort([mySockAddress UTF8String]);
+	self->myServerScreen->listenSock = rfbListenOnUNIXPort([socketAddress UTF8String]);
 	if (self->myServerScreen->listenSock < 0)
 	{
 		NSLog(@"Failed to open a UNIX socket for a VNC server screen");
@@ -115,9 +143,9 @@ static int rfbListenOnUNIXPort(const char * path);
 
 -(void)dealloc {
 	
-	if ([mySockAddress length] > 0)
+	if ([self->mySocketAddress length] > 0)
 	{
-		unlink([mySockAddress UTF8String]);
+		unlink([self->mySocketAddress UTF8String]);
 	}
 	if (self->myServerScreen != NULL)
 	{
@@ -171,6 +199,7 @@ static int rfbListenOnUNIXPort(const char * path);
 
 - (int)shutdown
 {
+	//TODO: This ...
 	return 0;
 }
 

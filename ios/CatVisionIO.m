@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <SeaCatClient/SeaCatClient.h>
+#import "CVIOSeaCatPlugin.h"
 #import "CatVisionIO.h"
 #import "VNCServer.h"
 
 @implementation CatVision {
+	NSString * socketAddress;
 	VNCServer * mVNCServer;
 	BOOL mSeaCatCofigured;
+	BOOL mStarted;
+	CVIOSeaCatPlugin * plugin;
 }
 
 + (instancetype)sharedInstance
@@ -33,29 +37,51 @@
 
 	mVNCServer = nil;
 	mSeaCatCofigured = NO;
+	mStarted = NO;
 
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+	NSMutableString *addr = [[paths objectAtIndex:0] mutableCopy];
+	[addr appendString:@"/vnc.s"]; //TODO: socket name can be more unique - it will allow to start more than one VNC server if needed
+	socketAddress = [addr copy];
+	
 	[SeaCatClient setApplicationId:@"com.teskalabs.cvio"];
-	[SeaCatClient setLogMask:SC_LOG_FLAG_DEBUG_GENERIC];
-
+	//This is to enable SeaCat debug logging [SeaCatClient setLogMask:SC_LOG_FLAG_DEBUG_GENERIC];
+	plugin = [[CVIOSeaCatPlugin alloc] init:5900];
+	
 	return self;
 }
 
 - (BOOL)start
 {
+	mStarted = YES;
+	
 	if (mVNCServer == nil)
 	{
-		mVNCServer = [[VNCServer new] init:800 height:600];
+		mVNCServer = [[VNCServer new] init:socketAddress width:800 height:600];
 		if (mVNCServer == nil) return NO;
 	}
 	[mVNCServer run];
 	
+	// VNC Server started
 	if (mSeaCatCofigured == NO) //TODO: if (![SeaCatClient isConfigured])
 	{
 		[SeaCatClient configureWithCSRDelegate:self];
-		[SeaCatClient reset];
+		[plugin configureSocket:socketAddress];
 		mSeaCatCofigured = YES;
 	}
-	
+
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+		// Wait till SeaCat is ready
+		//TODO: This can be implemented in much more 'Grand Central Dispatch friendly' way, avoid sleep(1)
+		while (![SeaCatClient isReady])
+		{
+			NSLog(@"SeaCat is not ready (%@) ... waiting", [SeaCatClient getState]);
+			sleep(1);
+		}
+		NSLog(@"SeaCat is READY");
+		[SeaCatClient connect];
+	});
+
 	return YES;
 }
 
