@@ -110,8 +110,11 @@
 		return nil;
 	}
 
+	NSBundle *bundle = [NSBundle mainBundle];
+	NSDictionary *info = [bundle infoDictionary];
+	
 	SCCSR * csr = [[SCCSR alloc] init];
-	[csr setOrganization:@"TODO"]; //TODO: getPackageName()
+	[csr setOrganization:[info objectForKey:(NSString*)kCFBundleIdentifierKey]];
 	[csr setOrganizationUnit:APIKeyId];
 	return [csr submit:out_error];
 }
