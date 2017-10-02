@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <SeaCatClient/SeaCatClient.h>
+
 #import "CVIOSeaCatPlugin.h"
 #import "CatVisionIO.h"
 #import "VNCServer.h"
+#import "ReplayKitSource/CVIOReplayKitSource.h"
 
 @implementation CatVision {
 	NSString * socketAddress;
@@ -18,8 +20,9 @@
 	BOOL mSeaCatCofigured;
 	BOOL mStarted;
 	CVIOSeaCatPlugin * plugin;
+	CVIOReplayKitSource * source;
 	
-	UIImage * monoscope; //To be removed
+	UIImage * capturedImage;
 }
 
 + (instancetype)sharedInstance
@@ -50,7 +53,8 @@
 	//This is to enable SeaCat debug logging [SeaCatClient setLogMask:SC_LOG_FLAG_DEBUG_GENERIC];
 	plugin = [[CVIOSeaCatPlugin alloc] init:5900];
 	
-	monoscope = [UIImage imageNamed:@"Monoscope"];
+	source = [[CVIOReplayKitSource alloc] init:self];
+	capturedImage = nil;
 	
 	return self;
 }
@@ -61,8 +65,8 @@
 	
 	if (mVNCServer == nil)
 	{
-		CGSize size = [monoscope size];
-		mVNCServer = [[VNCServer new] init:self address:socketAddress width:size.width height:size.height];
+		//TODO: Get current screen size
+		mVNCServer = [[VNCServer new] init:self address:socketAddress width:640 height:1136];
 		if (mVNCServer == nil) return NO;
 	}
 	[mVNCServer start];
@@ -75,6 +79,10 @@
 		mSeaCatCofigured = YES;
 	}
 
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[source start];
+	});
+	
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		// Wait till SeaCat is ready
 		//TODO: This can be implemented in much more 'Grand Central Dispatch friendly' way, avoid sleep(1)
@@ -85,8 +93,6 @@
 		}
 		NSLog(@"SeaCat is READY");
 		[SeaCatClient connect];
-		
-		[mVNCServer imageReady];
 	});
 
 	return YES;
@@ -110,16 +116,35 @@
 	return [csr submit:out_error];
 }
 
+-(void)handleSourceBuffer:(CMSampleBufferRef)sampleBuffer sampleType:(RPSampleBufferType)sampleType
+{
+	CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+	
+	CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];
+	CIContext *temporaryContext = [CIContext contextWithOptions:nil];
+	CGImageRef videoImage = [temporaryContext
+							 createCGImage:ciImage
+							 fromRect:CGRectMake(0, 0, CVPixelBufferGetWidth(imageBuffer), CVPixelBufferGetHeight(imageBuffer))];
+	
+	capturedImage = [[UIImage alloc] initWithCGImage:videoImage];
+	CGImageRelease(videoImage);
+	[mVNCServer imageReady];
+}
+
 -(int)takeImage
 {
-	CGImageRef image = [monoscope CGImage];
-	CGDataProviderRef provider = CGImageGetDataProvider(image);
-	CFDataRef data = CGDataProviderCopyData(provider);
+	if (capturedImage == nil) return 0;
+	
+    CGImageRef image = [capturedImage CGImage];
+    CGDataProviderRef provider = CGImageGetDataProvider(image);
+    CFDataRef data = CGDataProviderCopyData(provider);
 	
 	const unsigned char * buffer =  CFDataGetBytePtr(data);
 	ssize_t buffer_len = CFDataGetLength(data);
 	
-	[mVNCServer pushPixelsRGBA8888:buffer length:buffer_len row_stride:450*4];
+	[mVNCServer pushPixelsRGBA8888:buffer length:buffer_len row_stride:640*4];
+	
+	CGImageRelease(image);
 	
 	return 0;
 }

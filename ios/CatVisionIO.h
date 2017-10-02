@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ReplayKit/ReplayKit.h>
 #import <SeaCatClient/SeaCatClient.h>
 #import <VNCServer/VNCServer.h>
 
@@ -16,9 +17,12 @@ FOUNDATION_EXPORT double CatVisionVersionNumber;
 //! Project version string for ios.
 FOUNDATION_EXPORT const unsigned char CatVisionVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <ios/PublicHeader.h>
+@protocol CVIOSourceDelegate <NSObject>
+-(void)handleSourceBuffer:(CMSampleBufferRef)sampleBuffer sampleType:(RPSampleBufferType)sampleType;
+@end
 
-@interface CatVision : NSObject <SeaCatCSRDelegate, VNCServerDelegate>
+
+@interface CatVision : NSObject <SeaCatCSRDelegate, VNCServerDelegate, CVIOSourceDelegate>
 
 + (instancetype)sharedInstance;
 - (instancetype)init NS_UNAVAILABLE;
