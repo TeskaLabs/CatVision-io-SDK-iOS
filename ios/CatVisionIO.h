@@ -11,16 +11,13 @@
 #import <SeaCatClient/SeaCatClient.h>
 #import <VNCServer/VNCServer.h>
 
+#include "CVIOInterfaces.h"
+
 //! Project version number for ios.
 FOUNDATION_EXPORT double CatVisionVersionNumber;
 
 //! Project version string for ios.
 FOUNDATION_EXPORT const unsigned char CatVisionVersionString[];
-
-@protocol CVIOSourceDelegate <NSObject>
--(void)handleSourceBuffer:(CMSampleBufferRef)sampleBuffer sampleType:(RPSampleBufferType)sampleType;
-@end
-
 
 @interface CatVision : NSObject <SeaCatCSRDelegate, VNCServerDelegate, CVIOSourceDelegate>
 

@@ -6,7 +6,7 @@
 //  Copyright © 2017 TeskaLabs. All rights reserved.
 //
 
-@interface CVIOReplayKitSource : NSObject
+@interface CVIOReplayKitSource : NSObject <CVIOSource>
 
 @property (readonly) id<CVIOSourceDelegate> delegate;
 

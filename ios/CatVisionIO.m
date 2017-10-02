@@ -19,9 +19,9 @@
 	VNCServer * mVNCServer;
 	BOOL mSeaCatCofigured;
 	BOOL mStarted;
-	CVIOSeaCatPlugin * plugin;
-	CVIOReplayKitSource * source;
-	
+	CVIOSeaCatPlugin * plugin;	
+	id<CVIOSource> source;
+
 	UIImage * capturedImage;
 }
 
@@ -110,7 +110,7 @@
 
 	NSBundle *bundle = [NSBundle mainBundle];
 	NSDictionary *info = [bundle infoDictionary];
-	
+
 	SCCSR * csr = [[SCCSR alloc] init];
 	[csr setOrganization:[info objectForKey:(NSString*)kCFBundleIdentifierKey]];
 	[csr setOrganizationUnit:APIKeyId];

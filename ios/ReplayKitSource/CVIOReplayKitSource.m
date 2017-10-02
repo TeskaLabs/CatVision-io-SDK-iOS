@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <ReplayKit/ReplayKit.h>
-#import "CatVisionIO.h"
-#import "CVIOReplayKitSource.h"
+#include "CatVisionIO.h"
+#include "CVIOReplayKitSource.h"
 
 @implementation CVIOReplayKitSource {
 	RPScreenRecorder * screenRecorder;

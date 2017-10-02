@@ -16,6 +16,7 @@
 		DB3EFDB31F8165320070E432 /* CVIOReplayKitSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3EFDB21F8165320070E432 /* CVIOReplayKitSource.h */; };
 		DB3EFDB51F81654A0070E432 /* CVIOReplayKitSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EFDB41F81654A0070E432 /* CVIOReplayKitSource.m */; };
 		DB3EFDB71F8166B10070E432 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
+		DB6107A61F8241CF00945D9C /* CVIOInterfaces.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6107A51F8241CF00945D9C /* CVIOInterfaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB6EE1E31F7C5D20009B028B /* CatVisionIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB8628991F7D77B300849DFB /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628981F7D77B300849DFB /* jmemnobs.c */; };
 		DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
@@ -176,6 +177,7 @@
 		DB3EFDB21F8165320070E432 /* CVIOReplayKitSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVIOReplayKitSource.h; sourceTree = "<group>"; };
 		DB3EFDB41F81654A0070E432 /* CVIOReplayKitSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVIOReplayKitSource.m; sourceTree = "<group>"; };
 		DB3EFDB61F8166B10070E432 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/ReplayKit.framework; sourceTree = DEVELOPER_DIR; };
+		DB6107A51F8241CF00945D9C /* CVIOInterfaces.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CVIOInterfaces.h; path = ios/CVIOInterfaces.h; sourceTree = SOURCE_ROOT; };
 		DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatVisionIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatVisionIO.h; sourceTree = "<group>"; };
 		DB6EE1E21F7C5D20009B028B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				DB6EE1E21F7C5D20009B028B /* Info.plist */,
 				DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */,
 				DB1AEB781F805340003347EB /* CatVisionIO.m */,
+				DB6107A51F8241CF00945D9C /* CVIOInterfaces.h */,
 				DB3EFDAC1F810BA40070E432 /* CVIOSeaCatPlugin.h */,
 				DB3EFDAA1F810B100070E432 /* CVIOSeaCatPlugin.m */,
 			);
@@ -522,6 +525,7 @@
 				DB3EFDB31F8165320070E432 /* CVIOReplayKitSource.h in Headers */,
 				DB6EE1E31F7C5D20009B028B /* CatVisionIO.h in Headers */,
 				DB3EFDAD1F810BAC0070E432 /* CVIOSeaCatPlugin.h in Headers */,
+				DB6107A61F8241CF00945D9C /* CVIOInterfaces.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
