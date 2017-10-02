@@ -101,8 +101,6 @@
 // Submit CSR
 -(bool)submit:(NSError **)out_error
 {
-	NSLog(@"submit!!!!");
-
 	NSString * APIKeyId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CVIOApiKeyId"];
 	if (APIKeyId == nil)
 	{
