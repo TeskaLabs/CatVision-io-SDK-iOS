@@ -172,6 +172,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 
 	self->runPhase = 1;
 	self->myThread = [[NSThread alloc] initWithTarget:self selector:@selector(_run) object:nil];
+	[self->myThread setName:@"CVIOVNCServerThread"];
 	[self->myThread start];
 }
 
@@ -218,7 +219,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	self->imageReady += 1;
 }
 
-- (void)pushPixelsRGBA8888:(const unsigned char *)buffer length:(ssize_t)len row_stride:(int)s_stride
+- (void)pushPixels_RGBA8888:(const unsigned char *)buffer length:(ssize_t)len row_stride:(int)s_stride
 {
 	// This needs to be super-optimized!
 	// TODO: See NEON/SIMD optimisations in libyuv https://chromium.googlesource.com/libyuv/libyuv/+/master/source/row_neon64.cc
@@ -260,6 +261,66 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	if (max_x == -1) return; // No update needed
 	
 	rfbMarkRectAsModified(myServerScreen, myXOffset + min_x, min_y, myXOffset + max_x + 1, max_y + 1);
+}
+
+- (void)pushPixels_420YpCbCr8BiPlanarFullRange:(CVImageBufferRef)imageBuffer
+{
+	// This needs to be super-optimized!
+	// TODO: See NEON/SIMD optimisations in libyuv https://chromium.googlesource.com/libyuv/libyuv/+/master/source/row_neon64.cc
+	// Insprired by https://stackoverflow.com/questions/8838481/kcvpixelformattype-420ypcbcr8biplanarfullrange-frame-to-uiimage-conversion
+
+	uint16_t * t = (uint16_t *)myServerScreen->frameBuffer;
+	int max_x=-1,max_y=-1, min_x=99999, min_y=99999;
+
+	CVPixelBufferLockBaseAddress(imageBuffer,0);
+	
+	size_t width = CVPixelBufferGetWidth(imageBuffer);
+	size_t height = CVPixelBufferGetHeight(imageBuffer);
+	uint8_t *yBuffer = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
+	size_t yPitch = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 0);
+	uint8_t *cbCrBuffer = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 1);
+	size_t cbCrPitch = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 1);
+	
+	for(int y = 0; y < height; y+=1)
+	{
+		uint8_t *yBufferLine = &yBuffer[y * yPitch];
+		uint8_t *cbCrBufferLine = &cbCrBuffer[(y >> 1) * cbCrPitch];
+		
+		int tpos = (y * myLineStride) + myXOffset;
+		
+		for(int x = 0; x < width; x+=1, tpos+=1)
+		{
+			int16_t y = yBufferLine[x];
+			int16_t cb = cbCrBufferLine[x & ~1] - 128;
+			int16_t cr = cbCrBufferLine[x | 1] - 128;
+			
+			int16_t r = (int16_t)roundf( y + cr *  1.4 );
+			int16_t g = (int16_t)roundf( y + cb * -0.343 + cr * -0.711 );
+			int16_t b = (int16_t)roundf( y + cb *  1.765);
+		
+			// Clamp and convert to RGB_555
+			r = ((r>255?255:(r<0?0:r)) >> 3) & 0x001F;
+			g = ((g>255?255:(g<0?0:g)) >> 3) & 0x001F;
+			b = ((b>255?255:(b<0?0:b)) >> 3) & 0x001F;
+			const uint16_t p = (b << 10) | (g << 5) | r;
+			
+			if (t[tpos] == p) continue; // No update needed
+			t[tpos] = p;
+			
+			if (x > max_x) max_x = x;
+			if (x < min_x) min_x = x;
+			if (y > max_y) max_y = y;
+			if (y < min_y) min_y = y;
+
+		}
+	}
+
+	CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+	
+	if (max_x == -1) return; // No update needed
+	
+	rfbMarkRectAsModified(myServerScreen, myXOffset + min_x, min_y, myXOffset + max_x + 1, max_y + 1);
+
 }
 
 @end

@@ -22,7 +22,7 @@
 	CVIOSeaCatPlugin * plugin;	
 	id<CVIOSource> source;
 
-	UIImage * capturedImage;
+	CVImageBufferRef capturedImage;
 }
 
 + (instancetype)sharedInstance
@@ -55,7 +55,7 @@
 	
 	source = [[CVIOReplayKitSource alloc] init:self];
 	capturedImage = nil;
-	
+
 	return self;
 }
 
@@ -119,34 +119,48 @@
 
 -(void)handleSourceBuffer:(CMSampleBufferRef)sampleBuffer sampleType:(RPSampleBufferType)sampleType
 {
-	CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+	CVImageBufferRef c = CMSampleBufferGetImageBuffer(sampleBuffer);
+	if (c == NULL)
+	{
+		NSLog(@"CVIO CMSampleBufferGetImageBuffer() failed");
+		return;
+	}
+
+	// This is maybe a critical section b/c of manipulation with capturedImage
+	{
+		if (capturedImage != nil)
+		{
+			CVPixelBufferRelease(capturedImage);
+			capturedImage = nil;
+		}
+
+		capturedImage = c;
+		CVPixelBufferRetain(capturedImage);
+	}
 	
-	CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];
-	CIContext *temporaryContext = [CIContext contextWithOptions:nil];
-	CGImageRef videoImage = [temporaryContext
-							 createCGImage:ciImage
-							 fromRect:CGRectMake(0, 0, CVPixelBufferGetWidth(imageBuffer), CVPixelBufferGetHeight(imageBuffer))];
-	
-	capturedImage = [[UIImage alloc] initWithCGImage:videoImage];
-	CGImageRelease(videoImage);
 	[mVNCServer imageReady];
 }
 
 -(int)takeImage
 {
 	if (capturedImage == nil) return 0;
-	
-    CGImageRef image = [capturedImage CGImage];
-    CGDataProviderRef provider = CGImageGetDataProvider(image);
-    CFDataRef data = CGDataProviderCopyData(provider);
-	
-	const unsigned char * buffer =  CFDataGetBytePtr(data);
-	ssize_t buffer_len = CFDataGetLength(data);
-	
-	[mVNCServer pushPixelsRGBA8888:buffer length:buffer_len row_stride:640*4];
-	
-	CGImageRelease(image);
-	
+
+	// This is maybe a critical section b/c of manipulation with capturedImage
+	CVImageBufferRef image = capturedImage;
+	capturedImage = nil;
+
+	OSType capturedImagePixelFormat = CVPixelBufferGetPixelFormatType(image);
+	switch (capturedImagePixelFormat) {
+		case kCVPixelFormatType_420YpCbCr8BiPlanarFullRange:
+			[mVNCServer pushPixels_420YpCbCr8BiPlanarFullRange:image];
+			break;
+
+		default:
+			NSLog(@"CVIO Captured image is in an unknown format: %08X", capturedImagePixelFormat);
+			break;
+	};
+
+	CVPixelBufferRelease(image);
 	return 0;
 }
 
