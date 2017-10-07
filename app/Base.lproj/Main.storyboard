@@ -38,6 +38,9 @@
                                     <constraint firstAttribute="height" constant="300" id="BNo-tH-C72"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="imu-am-zR0">
+                                <rect key="frame" x="142" y="35" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.32494512199999998" green="0.4074460566" blue="0.54568922519999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -47,11 +50,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wHb-va-8H6" secondAttribute="trailing" constant="30" id="ADO-zT-zlf"/>
                             <constraint firstItem="wHb-va-8H6" firstAttribute="top" secondItem="0VV-kt-Klt" secondAttribute="bottom" constant="15" id="Bj1-FZ-d0X"/>
                             <constraint firstItem="lro-Yv-82Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FUU-Yv-jby"/>
+                            <constraint firstItem="imu-am-zR0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="Ly1-oV-yOa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lro-Yv-82Q" secondAttribute="trailing" id="UDa-Fo-YUm"/>
                             <constraint firstItem="wHb-va-8H6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Y3u-YV-UHm"/>
                             <constraint firstItem="lro-Yv-82Q" firstAttribute="top" secondItem="wHb-va-8H6" secondAttribute="bottom" constant="15" id="bF1-IG-TjY"/>
                             <constraint firstItem="0VV-kt-Klt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="kDg-sp-alc"/>
                             <constraint firstItem="0VV-kt-Klt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="p85-eL-bfm"/>
+                            <constraint firstItem="imu-am-zR0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yvD-JV-eIH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
