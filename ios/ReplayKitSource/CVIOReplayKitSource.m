@@ -37,7 +37,7 @@
 	if (![screenRecorder isAvailable])
 	{
 		//TODO: Signalise this better
-		NSLog(@"Screen recorder is not available!");
+		NSLog(@"CVIO Screen recorder is not available!");
 		return;
 	}
 	
@@ -47,8 +47,15 @@
 			[delegate handleSourceBuffer:sampleBuffer sampleType:bufferType];
 		}
 	} completionHandler:^(NSError * _Nullable error) {
+		if (error == nil)
+		{
+			NSLog(@"CVIO Screen recorder initialization completed");
+			return;
+		}
 		NSLog(@"!!! startCaptureWithHandler/completionHandler %@ !!!", error);
 	}];
+
+	NSLog(@"CVIO Screen recorder launched ...");
 }
 
 -(void)stop
