@@ -11,6 +11,8 @@
 #include "CatVisionIO.h"
 #include "CVIOReplayKitSource.h"
 
+//See: https://developer.apple.com/videos/play/wwdc2017/606/
+
 @implementation CVIOReplayKitSource {
 	RPScreenRecorder * screenRecorder;
 }
