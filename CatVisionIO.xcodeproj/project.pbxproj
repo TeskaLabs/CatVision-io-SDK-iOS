@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DB066F8B1F8A467D0092F289 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */; };
-		DB066F8D1F8A488B0092F289 /* BroadcastSampleSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB066F8C1F8A488B0092F289 /* BroadcastSampleSource.m */; };
 		DB1AEB791F805340003347EB /* CatVisionIO.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1AEB781F805340003347EB /* CatVisionIO.m */; };
 		DB3EFDA31F80FC620070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
 		DB3EFDA41F80FC740070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
@@ -126,10 +125,8 @@
 		DBBFC1AF1F7D6DF100BB0ABD /* vncauth.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1AB1F7D6DF100BB0ABD /* vncauth.c */; };
 		DBD6065D1F7D9EE700DFB3E7 /* VNCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD6065C1F7D9EE700DFB3E7 /* VNCServer.m */; };
 		DBDB53C71F82F2A600B8E776 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
-		DBDB53CB1F82F2A600B8E776 /* BroadcastSampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDB53CA1F82F2A600B8E776 /* BroadcastSampleHandler.m */; };
 		DBDB53D21F82F2A600B8E776 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
 		DBDB53D41F82F2A600B8E776 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDB53D31F82F2A600B8E776 /* UIKit.framework */; };
-		DBDB53D81F82F2A600B8E776 /* BroadcastSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDB53D71F82F2A600B8E776 /* BroadcastSetupViewController.m */; };
 		DBDB53DC1F82F2A600B8E776 /* broadcast-extSetupUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DBDB53D11F82F2A600B8E776 /* broadcast-extSetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DBDB53DF1F82F2A600B8E776 /* broadcast-ext.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DBDB53C61F82F2A600B8E776 /* broadcast-ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DBDB53E71F82F30C00B8E776 /* CatVisionIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; };
@@ -212,8 +209,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DB066F8C1F8A488B0092F289 /* BroadcastSampleSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BroadcastSampleSource.m; sourceTree = "<group>"; };
-		DB066F8E1F8A48A20092F289 /* BroadcastSampleSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BroadcastSampleSource.h; sourceTree = "<group>"; };
 		DB1AEB781F805340003347EB /* CatVisionIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatVisionIO.m; sourceTree = "<group>"; };
 		DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeaCatClient.framework; sourceTree = "<group>"; };
 		DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeaCatClient.framework; sourceTree = "<group>"; };
@@ -332,14 +327,8 @@
 		DBBFC1AB1F7D6DF100BB0ABD /* vncauth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vncauth.c; path = libvncserver/common/vncauth.c; sourceTree = "<group>"; };
 		DBD6065C1F7D9EE700DFB3E7 /* VNCServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VNCServer.m; sourceTree = "<group>"; };
 		DBDB53C61F82F2A600B8E776 /* broadcast-ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "broadcast-ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBDB53C91F82F2A600B8E776 /* BroadcastSampleHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BroadcastSampleHandler.h; sourceTree = "<group>"; };
-		DBDB53CA1F82F2A600B8E776 /* BroadcastSampleHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BroadcastSampleHandler.m; sourceTree = "<group>"; };
-		DBDB53CC1F82F2A600B8E776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBDB53D11F82F2A600B8E776 /* broadcast-extSetupUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "broadcast-extSetupUI.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDB53D31F82F2A600B8E776 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		DBDB53D61F82F2A600B8E776 /* BroadcastSetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BroadcastSetupViewController.h; sourceTree = "<group>"; };
-		DBDB53D71F82F2A600B8E776 /* BroadcastSetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BroadcastSetupViewController.m; sourceTree = "<group>"; };
-		DBDB53D91F82F2A600B8E776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,8 +433,6 @@
 				DB6EE1E01F7C5D20009B028B /* ios */,
 				DBBFC0751F7D55D400BB0ABD /* app */,
 				DBBFC0931F7D609A00BB0ABD /* VNCServer */,
-				DBDB53C81F82F2A600B8E776 /* broadcast-ext */,
-				DBDB53D51F82F2A600B8E776 /* broadcast-extSetupUI */,
 				DB6EE1DF1F7C5D20009B028B /* Products */,
 				DB6EE1E71F7C5D6B009B028B /* Frameworks */,
 			);
@@ -591,28 +578,6 @@
 				DBBFC15E1F7D6C6400BB0ABD /* jutils.c */,
 			);
 			name = jpeg;
-			sourceTree = "<group>";
-		};
-		DBDB53C81F82F2A600B8E776 /* broadcast-ext */ = {
-			isa = PBXGroup;
-			children = (
-				DBDB53C91F82F2A600B8E776 /* BroadcastSampleHandler.h */,
-				DBDB53CA1F82F2A600B8E776 /* BroadcastSampleHandler.m */,
-				DB066F8E1F8A48A20092F289 /* BroadcastSampleSource.h */,
-				DB066F8C1F8A488B0092F289 /* BroadcastSampleSource.m */,
-				DBDB53CC1F82F2A600B8E776 /* Info.plist */,
-			);
-			path = "broadcast-ext";
-			sourceTree = "<group>";
-		};
-		DBDB53D51F82F2A600B8E776 /* broadcast-extSetupUI */ = {
-			isa = PBXGroup;
-			children = (
-				DBDB53D61F82F2A600B8E776 /* BroadcastSetupViewController.h */,
-				DBDB53D71F82F2A600B8E776 /* BroadcastSetupViewController.m */,
-				DBDB53D91F82F2A600B8E776 /* Info.plist */,
-			);
-			path = "broadcast-extSetupUI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -972,8 +937,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB066F8D1F8A488B0092F289 /* BroadcastSampleSource.m in Sources */,
-				DBDB53CB1F82F2A600B8E776 /* BroadcastSampleHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,7 +944,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBDB53D81F82F2A600B8E776 /* BroadcastSetupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
