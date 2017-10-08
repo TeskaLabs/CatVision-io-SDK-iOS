@@ -47,10 +47,11 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 /////
 
 @implementation VNCServer {
-	int myWidth;
-	int myHeight;
-	int myLineStride; // 'Real width' including a border
-	int myXOffset;
+	size_t myWidth;
+	size_t myHeight;
+	size_t myLineStride; // 'Real width' including a border
+	size_t myXOffset;
+	size_t myDownScaleFactor;
 
 	size_t myFbLength;
 	void * myFb;
@@ -64,7 +65,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	int imageReady;
 }
 
-- (id)init:(id<VNCServerDelegate>)delegate address:(NSString *)socketAddress width:(int)width height:(int)height
+- (id)init:(id<VNCServerDelegate>)delegate address:(NSString *)socketAddress size:(CGSize)size downScaleFactor:(int)downScaleFactor
 {
 	self = [super init];
 	if (self == nil) return nil;
@@ -75,8 +76,12 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	self->runPhase = 0;
 	self->imageReady = 0;
 
-	self->myWidth = width;
-	self->myHeight = height;
+	self->myWidth = size.width;
+	self->myHeight = size.height;
+	self->myDownScaleFactor = downScaleFactor;
+	self->myWidth >>= downScaleFactor;
+	self->myHeight >>= downScaleFactor;
+
 	self->myLineStride = (self->myWidth + 7) & ~7; // Round to next 8
 	self->myXOffset = (self->myLineStride - self->myWidth) / 2; // Put picture in the middle
 	self->myFbLength = self->myLineStride * (self->myHeight + 1) * BPP;
@@ -281,14 +286,14 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	uint8_t *cbCrBuffer = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 1);
 	size_t cbCrPitch = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 1);
 	
-	for(int y = 0; y < height; y+=1)
+	for(int y = 0; y < height; y+=(1 << myDownScaleFactor))
 	{
 		uint8_t *yBufferLine = &yBuffer[y * yPitch];
 		uint8_t *cbCrBufferLine = &cbCrBuffer[(y >> 1) * cbCrPitch];
 		
-		int tpos = (y * myLineStride) + myXOffset;
+		size_t tpos = ((y >> myDownScaleFactor) * myLineStride) + myXOffset;
 		
-		for(int x = 0; x < width; x+=1, tpos+=1)
+		for(int x = 0; x < width; x+=(1 << myDownScaleFactor), tpos+=1)
 		{
 			int16_t y = yBufferLine[x];
 			int16_t cb = cbCrBufferLine[x & ~1] - 128;
@@ -319,7 +324,12 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	
 	if (max_x == -1) return; // No update needed
 	
-	rfbMarkRectAsModified(myServerScreen, myXOffset + min_x, min_y, myXOffset + max_x + 1, max_y + 1);
+	rfbMarkRectAsModified(myServerScreen,
+		  (int) myXOffset + (min_x >> myDownScaleFactor),
+		  min_y >> myDownScaleFactor,
+		  (int) myXOffset + (max_x >> myDownScaleFactor) + 1,
+		  (max_y >> myDownScaleFactor) + 1
+    );
 
 }
 

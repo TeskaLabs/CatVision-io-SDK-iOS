@@ -30,6 +30,17 @@
 	return self;
 }
 
+- (CGSize)getSize
+{
+	CGRect screenBounds = [[UIScreen mainScreen] bounds];
+	CGFloat screenScale = [[UIScreen mainScreen] scale]; // Adjust screen size by subpixel scale
+	CGSize ret = {
+		.width = screenBounds.size.width * screenScale,
+		.height = screenBounds.size.height * screenScale,
+	};
+	return ret;
+}
+
 -(void)start
 {
 	[screenRecorder setMicrophoneEnabled:NO];
@@ -47,15 +58,9 @@
 			[delegate handleSourceBuffer:sampleBuffer sampleType:bufferType];
 		}
 	} completionHandler:^(NSError * _Nullable error) {
-		if (error == nil)
-		{
-			NSLog(@"CVIO Screen recorder initialization completed");
-			return;
-		}
+		if (error == nil) return;
 		NSLog(@"!!! startCaptureWithHandler/completionHandler %@ !!!", error);
 	}];
-
-	NSLog(@"CVIO Screen recorder launched ...");
 }
 
 -(void)stop

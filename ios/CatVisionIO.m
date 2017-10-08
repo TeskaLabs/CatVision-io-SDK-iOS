@@ -53,20 +53,37 @@
 	//This is to enable SeaCat debug logging [SeaCatClient setLogMask:SC_LOG_FLAG_DEBUG_GENERIC];
 	plugin = [[CVIOSeaCatPlugin alloc] init:5900];
 	
-	source = [[CVIOReplayKitSource alloc] init:self];
+	source = nil;
 	capturedImage = nil;
 
 	return self;
 }
 
+- (void)setSource:(id<CVIOSource>)in_source
+{
+	if (mStarted != NO)
+	{
+		NSLog(@"CVIO Source can be changed only if CatVision.io is not started");
+		return;
+	}
+
+	source = in_source;
+}
+
 - (BOOL)start
 {
 	mStarted = YES;
+
+	// ReplayKit is a default source
+	if (source == nil)
+	{
+		source = [[CVIOReplayKitSource alloc] init:self];
+	}
 	
 	if (mVNCServer == nil)
 	{
-		//TODO: Get current screen size
-		mVNCServer = [[VNCServer new] init:self address:socketAddress width:640 height:1136];
+		CGSize size = [source getSize];
+		mVNCServer = [[VNCServer new] init:self address:socketAddress size:size downScaleFactor:1];
 		if (mVNCServer == nil) return NO;
 	}
 	[mVNCServer start];

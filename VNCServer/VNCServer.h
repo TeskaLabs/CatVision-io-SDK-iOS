@@ -24,7 +24,7 @@ FOUNDATION_EXPORT const unsigned char VNCServerVersionString[];
 
 @property (readonly) id<VNCServerDelegate> delegate;
 
-- (id)init:(id<VNCServerDelegate>)delegate address:(NSString *)socketAddress width:(int)width height:(int)height;
+- (id)init:(id<VNCServerDelegate>)delegate address:(NSString *)socketAddress size:(CGSize)size downScaleFactor:(int)factor;
 - (void)start;
 - (void)stop;
 

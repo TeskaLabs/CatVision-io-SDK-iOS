@@ -13,4 +13,7 @@
 @protocol CVIOSource <NSObject>
 -(void)start;
 -(void)stop;
+
+- (CGSize)getSize;
+
 @end

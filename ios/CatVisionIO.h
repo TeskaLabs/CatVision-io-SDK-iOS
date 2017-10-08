@@ -26,5 +26,7 @@ FOUNDATION_EXPORT const unsigned char CatVisionVersionString[];
 
 - (BOOL)start;
 
+- (void)setSource:(id<CVIOSource>)source;
+
 @end
 

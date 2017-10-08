@@ -1,12 +1,15 @@
 //
-//  CVIOReplayKitSource.h
-//  ios
+//  BroadcastSampleSource.h
+//  broadcast-ext
 //
-//  Created by Ales Teska on 1.10.17.
+//  Created by Ales Teska on 8.10.17.
 //  Copyright © 2017 TeskaLabs. All rights reserved.
 //
 
-@interface CVIOReplayKitSource : NSObject <CVIOSource>
+#import <ReplayKit/ReplayKit.h>
+#import <CatVisionIO/CatVisionIO.h>
+
+@interface BroadcastSampleSource : NSObject <CVIOSource>
 
 @property (readonly) id<CVIOSourceDelegate> delegate;
 
