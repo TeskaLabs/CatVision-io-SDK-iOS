@@ -295,13 +295,13 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 		
 		for(int x = 0; x < width; x+=(1 << myDownScaleFactor), tpos+=1)
 		{
-			int16_t y = yBufferLine[x];
+			int16_t cy = yBufferLine[x];
 			int16_t cb = cbCrBufferLine[x & ~1] - 128;
 			int16_t cr = cbCrBufferLine[x | 1] - 128;
 			
-			int16_t r = (int16_t)roundf( y + cr *  1.4 );
-			int16_t g = (int16_t)roundf( y + cb * -0.343 + cr * -0.711 );
-			int16_t b = (int16_t)roundf( y + cb *  1.765);
+			int16_t r = (int16_t)roundf( cy + cr *  1.4 );
+			int16_t g = (int16_t)roundf( cy + cb * -0.343 + cr * -0.711 );
+			int16_t b = (int16_t)roundf( cy + cb *  1.765);
 		
 			// Clamp and convert to RGB_555
 			r = ((r>255?255:(r<0?0:r)) >> 3) & 0x001F;
