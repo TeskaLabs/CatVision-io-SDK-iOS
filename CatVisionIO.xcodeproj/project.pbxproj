@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB066F8B1F8A467D0092F289 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */; };
 		DB1AEB791F805340003347EB /* CatVisionIO.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1AEB781F805340003347EB /* CatVisionIO.m */; };
 		DB3EFDA31F80FC620070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
 		DB3EFDA41F80FC740070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
@@ -19,6 +18,12 @@
 		DB3EFDB71F8166B10070E432 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
 		DB6107A61F8241CF00945D9C /* CVIOInterfaces.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6107A51F8241CF00945D9C /* CVIOInterfaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB6EE1E31F7C5D20009B028B /* CatVisionIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB71F1F51F8A5F6B00820416 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
+		DB71F1F91F8A5F6B00820416 /* CVIOBroadcastSampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71F1F81F8A5F6B00820416 /* CVIOBroadcastSampleHandler.m */; };
+		DB71F1FD1F8A5F6B00820416 /* cvio-broadcast-ext.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB71F1F41F8A5F6A00820416 /* cvio-broadcast-ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB71F2031F8A602F00820416 /* CVIOBroadcastSampleSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71F2011F8A602F00820416 /* CVIOBroadcastSampleSource.m */; };
+		DB71F2061F8A60EF00820416 /* CatVisionIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; };
+		DB71F2071F8A60F200820416 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */; };
 		DB8628991F7D77B300849DFB /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628981F7D77B300849DFB /* jmemnobs.c */; };
 		DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
 		DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -124,22 +129,9 @@
 		DBBFC1AE1F7D6DF100BB0ABD /* d3des.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1AA1F7D6DF100BB0ABD /* d3des.c */; };
 		DBBFC1AF1F7D6DF100BB0ABD /* vncauth.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1AB1F7D6DF100BB0ABD /* vncauth.c */; };
 		DBD6065D1F7D9EE700DFB3E7 /* VNCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD6065C1F7D9EE700DFB3E7 /* VNCServer.m */; };
-		DBDB53C71F82F2A600B8E776 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
-		DBDB53D21F82F2A600B8E776 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
-		DBDB53D41F82F2A600B8E776 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDB53D31F82F2A600B8E776 /* UIKit.framework */; };
-		DBDB53DC1F82F2A600B8E776 /* broadcast-extSetupUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DBDB53D11F82F2A600B8E776 /* broadcast-extSetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		DBDB53DF1F82F2A600B8E776 /* broadcast-ext.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DBDB53C61F82F2A600B8E776 /* broadcast-ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		DBDB53E71F82F30C00B8E776 /* CatVisionIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DB066F891F8A462F0092F289 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DB6EE1DD1F7C5D20009B028B;
-			remoteInfo = ios;
-		};
 		DB8628A41F7D861900849DFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
@@ -154,19 +146,19 @@
 			remoteGlobalIDString = DBBFC0911F7D609A00BB0ABD;
 			remoteInfo = VNCServer;
 		};
-		DBDB53DA1F82F2A600B8E776 /* PBXContainerItemProxy */ = {
+		DBD2E8B71F8A62B400C10169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DBDB53D01F82F2A600B8E776;
-			remoteInfo = "broadcast-extSetupUI";
+			remoteGlobalIDString = DB71F1F31F8A5F6A00820416;
+			remoteInfo = "cvio-broadcast-ext";
 		};
-		DBDB53DD1F82F2A600B8E776 /* PBXContainerItemProxy */ = {
+		DBD2E8B91F8A62BF00C10169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DBDB53C51F82F2A600B8E776;
-			remoteInfo = "broadcast-ext";
+			remoteGlobalIDString = DB6EE1DD1F7C5D20009B028B;
+			remoteInfo = ios;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -200,8 +192,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				DBDB53DF1F82F2A600B8E776 /* broadcast-ext.appex in Embed App Extensions */,
-				DBDB53DC1F82F2A600B8E776 /* broadcast-extSetupUI.appex in Embed App Extensions */,
+				DB71F1FD1F8A5F6B00820416 /* cvio-broadcast-ext.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +212,12 @@
 		DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatVisionIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatVisionIO.h; sourceTree = "<group>"; };
 		DB6EE1E21F7C5D20009B028B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB71F1F41F8A5F6A00820416 /* cvio-broadcast-ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "cvio-broadcast-ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB71F1F71F8A5F6B00820416 /* CVIOBroadcastSampleHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVIOBroadcastSampleHandler.h; sourceTree = "<group>"; };
+		DB71F1F81F8A5F6B00820416 /* CVIOBroadcastSampleHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVIOBroadcastSampleHandler.m; sourceTree = "<group>"; };
+		DB71F1FA1F8A5F6B00820416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB71F2011F8A602F00820416 /* CVIOBroadcastSampleSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVIOBroadcastSampleSource.m; sourceTree = "<group>"; };
+		DB71F2021F8A602F00820416 /* CVIOBroadcastSampleSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVIOBroadcastSampleSource.h; sourceTree = "<group>"; };
 		DB8628981F7D77B300849DFB /* jmemnobs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jmemnobs.c; path = jpeg/jmemnobs.c; sourceTree = "<group>"; };
 		DB86289E1F7D83F000849DFB /* arm_init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = arm_init.c; path = libpng/arm/arm_init.c; sourceTree = "<group>"; };
 		DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = filter_neon_intrinsics.c; path = libpng/arm/filter_neon_intrinsics.c; sourceTree = "<group>"; };
@@ -326,8 +323,6 @@
 		DBBFC1AA1F7D6DF100BB0ABD /* d3des.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = d3des.c; path = libvncserver/common/d3des.c; sourceTree = "<group>"; };
 		DBBFC1AB1F7D6DF100BB0ABD /* vncauth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vncauth.c; path = libvncserver/common/vncauth.c; sourceTree = "<group>"; };
 		DBD6065C1F7D9EE700DFB3E7 /* VNCServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VNCServer.m; sourceTree = "<group>"; };
-		DBDB53C61F82F2A600B8E776 /* broadcast-ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "broadcast-ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBDB53D11F82F2A600B8E776 /* broadcast-extSetupUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "broadcast-extSetupUI.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDB53D31F82F2A600B8E776 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -339,6 +334,16 @@
 				DB3EFDB71F8166B10070E432 /* ReplayKit.framework in Frameworks */,
 				DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */,
 				DB3EFDA31F80FC620070E432 /* SeaCatClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB71F1F11F8A5F6A00820416 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB71F2061F8A60EF00820416 /* CatVisionIO.framework in Frameworks */,
+				DB71F1F51F8A5F6B00820416 /* ReplayKit.framework in Frameworks */,
+				DB71F2071F8A60F200820416 /* SeaCatClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,25 +361,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBDB53C31F82F2A600B8E776 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DBDB53E71F82F30C00B8E776 /* CatVisionIO.framework in Frameworks */,
-				DB066F8B1F8A467D0092F289 /* SeaCatClient.framework in Frameworks */,
-				DBDB53C71F82F2A600B8E776 /* ReplayKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBDB53CE1F82F2A600B8E776 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DBDB53D21F82F2A600B8E776 /* ReplayKit.framework in Frameworks */,
-				DBDB53D41F82F2A600B8E776 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,8 +382,7 @@
 				DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */,
 				DBBFC0741F7D55D400BB0ABD /* app.app */,
 				DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */,
-				DBDB53C61F82F2A600B8E776 /* broadcast-ext.appex */,
-				DBDB53D11F82F2A600B8E776 /* broadcast-extSetupUI.appex */,
+				DB71F1F41F8A5F6A00820416 /* cvio-broadcast-ext.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -426,13 +411,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB71F1F61F8A5F6B00820416 /* cvio-broadcast-ext */ = {
+			isa = PBXGroup;
+			children = (
+				DB71F2021F8A602F00820416 /* CVIOBroadcastSampleSource.h */,
+				DB71F2011F8A602F00820416 /* CVIOBroadcastSampleSource.m */,
+				DB71F1F71F8A5F6B00820416 /* CVIOBroadcastSampleHandler.h */,
+				DB71F1F81F8A5F6B00820416 /* CVIOBroadcastSampleHandler.m */,
+				DB71F1FA1F8A5F6B00820416 /* Info.plist */,
+			);
+			path = "cvio-broadcast-ext";
+			sourceTree = "<group>";
+		};
 		DB9118DA1F7C576200C6CF5F = {
 			isa = PBXGroup;
 			children = (
 				DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */,
+				DBBFC0931F7D609A00BB0ABD /* VNCServer */,
 				DB6EE1E01F7C5D20009B028B /* ios */,
 				DBBFC0751F7D55D400BB0ABD /* app */,
-				DBBFC0931F7D609A00BB0ABD /* VNCServer */,
+				DB71F1F61F8A5F6B00820416 /* cvio-broadcast-ext */,
 				DB6EE1DF1F7C5D20009B028B /* Products */,
 				DB6EE1E71F7C5D6B009B028B /* Frameworks */,
 			);
@@ -624,6 +622,24 @@
 			productReference = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		DB71F1F31F8A5F6A00820416 /* cvio-broadcast-ext */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB71F1FE1F8A5F6B00820416 /* Build configuration list for PBXNativeTarget "cvio-broadcast-ext" */;
+			buildPhases = (
+				DB71F1F01F8A5F6A00820416 /* Sources */,
+				DB71F1F11F8A5F6A00820416 /* Frameworks */,
+				DB71F1F21F8A5F6A00820416 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBD2E8BA1F8A62BF00C10169 /* PBXTargetDependency */,
+			);
+			name = "cvio-broadcast-ext";
+			productName = "cvio-broadcast-ext";
+			productReference = DB71F1F41F8A5F6A00820416 /* cvio-broadcast-ext.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DBBFC0731F7D55D400BB0ABD /* app */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBBFC0891F7D55D400BB0ABD /* Build configuration list for PBXNativeTarget "app" */;
@@ -637,10 +653,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				DBD2E8B81F8A62B400C10169 /* PBXTargetDependency */,
 				DB8628A51F7D861900849DFB /* PBXTargetDependency */,
 				DB8628AA1F7D865100849DFB /* PBXTargetDependency */,
-				DBDB53DB1F82F2A600B8E776 /* PBXTargetDependency */,
-				DBDB53DE1F82F2A600B8E776 /* PBXTargetDependency */,
 			);
 			name = app;
 			productName = app;
@@ -666,41 +681,6 @@
 			productReference = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DBDB53C51F82F2A600B8E776 /* broadcast-ext */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DBDB53E51F82F2A600B8E776 /* Build configuration list for PBXNativeTarget "broadcast-ext" */;
-			buildPhases = (
-				DBDB53C21F82F2A600B8E776 /* Sources */,
-				DBDB53C31F82F2A600B8E776 /* Frameworks */,
-				DBDB53C41F82F2A600B8E776 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DB066F8A1F8A462F0092F289 /* PBXTargetDependency */,
-			);
-			name = "broadcast-ext";
-			productName = "broadcast-ext";
-			productReference = DBDB53C61F82F2A600B8E776 /* broadcast-ext.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		DBDB53D01F82F2A600B8E776 /* broadcast-extSetupUI */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DBDB53E41F82F2A600B8E776 /* Build configuration list for PBXNativeTarget "broadcast-extSetupUI" */;
-			buildPhases = (
-				DBDB53CD1F82F2A600B8E776 /* Sources */,
-				DBDB53CE1F82F2A600B8E776 /* Frameworks */,
-				DBDB53CF1F82F2A600B8E776 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "broadcast-extSetupUI";
-			productName = "broadcast-extSetupUI";
-			productReference = DBDB53D11F82F2A600B8E776 /* broadcast-extSetupUI.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -715,19 +695,15 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
+					DB71F1F31F8A5F6A00820416 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 					DBBFC0731F7D55D400BB0ABD = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
 					DBBFC0911F7D609A00BB0ABD = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-					};
-					DBDB53C51F82F2A600B8E776 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-					};
-					DBDB53D01F82F2A600B8E776 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -749,14 +725,20 @@
 				DB6EE1DD1F7C5D20009B028B /* ios */,
 				DBBFC0731F7D55D400BB0ABD /* app */,
 				DBBFC0911F7D609A00BB0ABD /* VNCServer */,
-				DBDB53C51F82F2A600B8E776 /* broadcast-ext */,
-				DBDB53D01F82F2A600B8E776 /* broadcast-extSetupUI */,
+				DB71F1F31F8A5F6A00820416 /* cvio-broadcast-ext */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DB6EE1DC1F7C5D20009B028B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB71F1F21F8A5F6A00820416 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -774,20 +756,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DBBFC0901F7D609A00BB0ABD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBDB53C41F82F2A600B8E776 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBDB53CF1F82F2A600B8E776 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -821,6 +789,15 @@
 				DB3EFDB51F81654A0070E432 /* CVIOReplayKitSource.m in Sources */,
 				DB3EFDAB1F810B100070E432 /* CVIOSeaCatPlugin.m in Sources */,
 				DB1AEB791F805340003347EB /* CatVisionIO.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB71F1F01F8A5F6A00820416 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB71F1F91F8A5F6B00820416 /* CVIOBroadcastSampleHandler.m in Sources */,
+				DB71F2031F8A602F00820416 /* CVIOBroadcastSampleSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,28 +910,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBDB53C21F82F2A600B8E776 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBDB53CD1F82F2A600B8E776 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DB066F8A1F8A462F0092F289 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DB6EE1DD1F7C5D20009B028B /* ios */;
-			targetProxy = DB066F891F8A462F0092F289 /* PBXContainerItemProxy */;
-		};
 		DB8628A51F7D861900849DFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DB6EE1DD1F7C5D20009B028B /* ios */;
@@ -965,15 +923,15 @@
 			target = DBBFC0911F7D609A00BB0ABD /* VNCServer */;
 			targetProxy = DB8628A91F7D865100849DFB /* PBXContainerItemProxy */;
 		};
-		DBDB53DB1F82F2A600B8E776 /* PBXTargetDependency */ = {
+		DBD2E8B81F8A62B400C10169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DBDB53D01F82F2A600B8E776 /* broadcast-extSetupUI */;
-			targetProxy = DBDB53DA1F82F2A600B8E776 /* PBXContainerItemProxy */;
+			target = DB71F1F31F8A5F6A00820416 /* cvio-broadcast-ext */;
+			targetProxy = DBD2E8B71F8A62B400C10169 /* PBXContainerItemProxy */;
 		};
-		DBDB53DE1F82F2A600B8E776 /* PBXTargetDependency */ = {
+		DBD2E8BA1F8A62BF00C10169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DBDB53C51F82F2A600B8E776 /* broadcast-ext */;
-			targetProxy = DBDB53DD1F82F2A600B8E776 /* PBXContainerItemProxy */;
+			target = DB6EE1DD1F7C5D20009B028B /* ios */;
+			targetProxy = DBD2E8B91F8A62BF00C10169 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1151,6 +1109,134 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DB71F1FF1F8A5F6B00820416 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = P3Q6HRV8FN;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "cvio-broadcast-ext/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teskalabs.cvio.app.cvio-broadcast-ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB71F2001F8A5F6B00820416 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = P3Q6HRV8FN;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "cvio-broadcast-ext/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teskalabs.cvio.app.cvio-broadcast-ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1443,254 +1529,6 @@
 			};
 			name = Release;
 		};
-		DBDB53E01F82F2A600B8E776 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "broadcast-ext/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.teskalabs.cvio.app.broadcast-ext";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DBDB53E11F82F2A600B8E776 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "broadcast-ext/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.teskalabs.cvio.app.broadcast-ext";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		DBDB53E21F82F2A600B8E776 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "broadcast-extSetupUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.teskalabs.cvio.app.broadcast-extSetupUI";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DBDB53E31F82F2A600B8E776 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "broadcast-extSetupUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.teskalabs.cvio.app.broadcast-extSetupUI";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1699,6 +1537,15 @@
 			buildConfigurations = (
 				DB6EE1E41F7C5D20009B028B /* Debug */,
 				DB6EE1E51F7C5D20009B028B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB71F1FE1F8A5F6B00820416 /* Build configuration list for PBXNativeTarget "cvio-broadcast-ext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB71F1FF1F8A5F6B00820416 /* Debug */,
+				DB71F2001F8A5F6B00820416 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1726,24 +1573,6 @@
 			buildConfigurations = (
 				DBBFC0981F7D609A00BB0ABD /* Debug */,
 				DBBFC0991F7D609A00BB0ABD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DBDB53E41F82F2A600B8E776 /* Build configuration list for PBXNativeTarget "broadcast-extSetupUI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DBDB53E21F82F2A600B8E776 /* Debug */,
-				DBDB53E31F82F2A600B8E776 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DBDB53E51F82F2A600B8E776 /* Build configuration list for PBXNativeTarget "broadcast-ext" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DBDB53E01F82F2A600B8E776 /* Debug */,
-				DBDB53E11F82F2A600B8E776 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
