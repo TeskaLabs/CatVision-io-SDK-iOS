@@ -46,6 +46,13 @@
 
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
 	NSMutableString *addr = [[paths objectAtIndex:0] mutableCopy];
+	
+	NSError *error;
+	if (![[NSFileManager defaultManager] createDirectoryAtPath:addr withIntermediateDirectories:YES attributes:nil error:&error])
+	{
+		NSLog(@"Create directory error: %@", error);
+	}
+
 	[addr appendString:@"/vnc.s"]; //TODO: socket name can be more unique - it will allow to start more than one VNC server if needed
 	socketAddress = [addr copy];
 	
