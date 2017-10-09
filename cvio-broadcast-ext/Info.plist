@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>cvio-broadcast-ext</string>
+	<string>CatVision.io</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,6 +20,8 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CVIOApiKeyId</key>
+	<string>QRWV-eLwmQ2PFHIRV1NwhQ</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>
@@ -29,7 +31,5 @@
 		<key>RPBroadcastProcessMode</key>
 		<string>RPBroadcastProcessModeSampleBuffer</string>
 	</dict>
-	<key>CVIOApiKeyId</key>
-	<string>QRWV-eLwmQ2PFHIRV1NwhQ</string>
 </dict>
 </plist>
