@@ -137,12 +137,18 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	self->myServerScreen->maxFd = self->myServerScreen->listenSock;
 
 	// Preset framebuffer with black color
+	// Preset framebuffer with CatVision.io blue color (#21323e)
+	const uint16_t r = 0x21 >> 3;
+	const uint16_t g = 0x32 >> 3;
+	const uint16_t b = 0x3e >> 3;
+	const uint16_t p = (b << 10) | (g << 5) | r;
+
 	uint16_t * buffer = self->myFb;
 	for(int y=0; y<self->myHeight; y+=1)
 	{
 		for(int x=0; x<self->myLineStride; x+=1)
 		{
-			buffer[(y*self->myLineStride)+x] = 0;
+			buffer[(y*self->myLineStride)+x] = p;
 		}
 	}
 
