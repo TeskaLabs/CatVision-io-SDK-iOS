@@ -25,8 +25,13 @@ FOUNDATION_EXPORT const unsigned char CatVisionVersionString[];
 - (instancetype)init NS_UNAVAILABLE;
 
 - (BOOL)start;
+- (BOOL)stop;
 
 - (void)setSource:(id<CVIOSource>)source;
+
+- (NSString *)getState;
+- (NSString *)getClientTag;
+- (NSString *)getClientId;
 
 @end
 

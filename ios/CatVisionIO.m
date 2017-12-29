@@ -17,7 +17,6 @@
 @implementation CatVision {
 	NSString * socketAddress;
 	VNCServer * mVNCServer;
-	BOOL mSeaCatCofigured;
 	BOOL mStarted;
 	CVIOSeaCatPlugin * plugin;	
 	id<CVIOSource> source;
@@ -41,7 +40,6 @@
 	if (self == nil) return nil;
 
 	mVNCServer = nil;
-	mSeaCatCofigured = NO;
 	mStarted = NO;
 
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
@@ -62,6 +60,9 @@
 	
 	source = nil;
 	capturedImage = nil;
+
+	[SeaCatClient configureWithCSRDelegate:self];
+	[plugin configureSocket:socketAddress];
 
 	return self;
 }
@@ -94,14 +95,6 @@
 		if (mVNCServer == nil) return NO;
 	}
 	[mVNCServer start];
-	
-	// VNC Server started
-	if (mSeaCatCofigured == NO) //TODO: if (![SeaCatClient isConfigured])
-	{
-		[SeaCatClient configureWithCSRDelegate:self];
-		[plugin configureSocket:socketAddress];
-		mSeaCatCofigured = YES;
-	}
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[source start];
@@ -119,6 +112,26 @@
 		[SeaCatClient connect];
 	});
 
+	return YES;
+}
+
+- (BOOL)stop
+{
+	if (mVNCServer != nil)
+	{
+		[mVNCServer stop];
+		mVNCServer = nil;
+	}
+
+	if (source != nil)
+	{
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[source stop];
+			source = nil;
+		});
+	}
+	
+	mStarted = NO;
 	return YES;
 }
 
@@ -186,6 +199,23 @@
 
 	CVPixelBufferRelease(image);
 	return 0;
+}
+
+///
+
+- (NSString *)getState
+{
+	return [SeaCatClient getState];
+}
+
+- (NSString *)getClientTag
+{
+	return [SeaCatClient getClientTag];
+}
+
+- (NSString *)getClientId
+{
+	return [SeaCatClient getClientId];
 }
 
 @end
