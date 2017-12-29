@@ -63,14 +63,16 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	
 	int runPhase; // 0 .. idle, 1 .. starting, 2 .. running, 3 .. stopping
 	int imageReady;
+	
+	int (^takeImageHandler)(void);
 }
 
-- (id)init:(id<VNCServerDelegate>)delegate address:(NSString *)socketAddress size:(CGSize)size downScaleFactor:(int)downScaleFactor
+- (id)init:(int(^)(void))takeImage address:(NSString *)socketAddress size:(CGSize)size downScaleFactor:(int)downScaleFactor
 {
 	self = [super init];
 	if (self == nil) return nil;
 
-	self->_delegate = delegate;
+	self->takeImageHandler = [takeImage copy];
 	self->mySocketAddress = socketAddress;
 	self->myThread = nil;
 	self->runPhase = 0;
@@ -197,7 +199,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 		{
 			self->imageReady = 0;
 
-			int ret = [_delegate takeImage];
+			int ret = takeImageHandler();
 			if (ret != 0)
 			{
 				// takeImage() requested VNC server shutdown

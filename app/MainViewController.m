@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "CatVisionIO/CatVisionIO.h"
+#import "SeaCatClient/SeaCatClient.h"
 
 //
 

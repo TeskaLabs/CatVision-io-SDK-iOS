@@ -10,6 +10,7 @@
 #import <SeaCatClient/SeaCatClient.h>
 
 #import "CVIOSeaCatPlugin.h"
+#import "CVIOSeaCatCSR.h"
 #import "CatVisionIO.h"
 #import "VNCServer.h"
 #import "ReplayKitSource/CVIOReplayKitSource.h"
@@ -18,7 +19,8 @@
 	NSString * socketAddress;
 	VNCServer * mVNCServer;
 	BOOL mStarted;
-	CVIOSeaCatPlugin * plugin;	
+	CVIOSeaCatPlugin * plugin;
+	CVIOSeaCatCSR * CSR;
 	id<CVIOSource> source;
 
 	CVImageBufferRef capturedImage;
@@ -58,10 +60,12 @@
 	//This is to enable SeaCat debug logging [SeaCatClient setLogMask:SC_LOG_FLAG_DEBUG_GENERIC];
 	plugin = [[CVIOSeaCatPlugin alloc] init:5900];
 	
+	CSR = [[CVIOSeaCatCSR alloc] init];
+	
 	source = nil;
 	capturedImage = nil;
 
-	[SeaCatClient configureWithCSRDelegate:self];
+	[SeaCatClient configureWithCSRDelegate:CSR];
 	[plugin configureSocket:socketAddress];
 
 	return self;
@@ -91,7 +95,7 @@
 	if (mVNCServer == nil)
 	{
 		CGSize size = [source getSize];
-		mVNCServer = [[VNCServer new] init:self address:socketAddress size:size downScaleFactor:1];
+		mVNCServer = [[VNCServer new] init:^(){return [self takeImage];} address:socketAddress size:size downScaleFactor:1];
 		if (mVNCServer == nil) return NO;
 	}
 	[mVNCServer start];
@@ -133,25 +137,6 @@
 	
 	mStarted = NO;
 	return YES;
-}
-
-// Submit CSR
--(bool)submit:(NSError **)out_error
-{
-	NSString * APIKeyId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CVIOApiKeyId"];
-	if (APIKeyId == nil)
-	{
-		NSLog(@"CatVision.io API key (CVIOApiKeyId) not provided. See https://docs.catvision.io/get-started/api-key.html");
-		return nil;
-	}
-
-	NSBundle *bundle = [NSBundle mainBundle];
-	NSDictionary *info = [bundle infoDictionary];
-
-	SCCSR * csr = [[SCCSR alloc] init];
-	[csr setOrganization:[info objectForKey:(NSString*)kCFBundleIdentifierKey]];
-	[csr setOrganizationUnit:APIKeyId];
-	return [csr submit:out_error];
 }
 
 -(void)handleSourceBuffer:(CMSampleBufferRef)sampleBuffer sampleType:(RPSampleBufferType)sampleType

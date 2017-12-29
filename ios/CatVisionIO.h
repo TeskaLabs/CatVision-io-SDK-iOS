@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <ReplayKit/ReplayKit.h>
-#import <SeaCatClient/SeaCatClient.h>
-#import <VNCServer/VNCServer.h>
 
 #include "CVIOInterfaces.h"
 
@@ -19,7 +17,7 @@ FOUNDATION_EXPORT double CatVisionVersionNumber;
 //! Project version string for ios.
 FOUNDATION_EXPORT const unsigned char CatVisionVersionString[];
 
-@interface CatVision : NSObject <SeaCatCSRDelegate, VNCServerDelegate, CVIOSourceDelegate>
+@interface CatVision : NSObject <CVIOSourceDelegate>
 
 + (instancetype)sharedInstance;
 - (instancetype)init NS_UNAVAILABLE;

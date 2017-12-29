@@ -161,4 +161,7 @@ mv ./bin/ios-Debug/VNCServer.framework ./bin/ios-Debug/CatVisionIO.framework/Fra
 
 rm -rf ./bin/ios-Release/CatVisionIO.framework/Frameworks/VNCServer.framework/
 mv ./bin/ios-Release/VNCServer.framework ./bin/ios-Release/CatVisionIO.framework/Frameworks
-	
+
+echo "Bundling SeaCatClient headers"
+cp -r SeaCatClient.framework/Headers ./bin/ios-Debug/CatVisionIO.framework/Frameworks/SeaCatClient.framework/
+cp -r SeaCatClient.framework/Headers ./bin/ios-Release/CatVisionIO.framework/Frameworks/SeaCatClient.framework/
