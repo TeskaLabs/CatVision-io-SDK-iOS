@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
-- (IBAction)onStart:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UISwitch *shareSwitch;
+- (IBAction)onSharingTrigger:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *ClientTagLabel;
+@property (weak, nonatomic) IBOutlet UILabel *StateLabel;
+
 @end
 
