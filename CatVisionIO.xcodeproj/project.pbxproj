@@ -16,6 +16,7 @@
 		DB3EFDB31F8165320070E432 /* CVIOReplayKitSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3EFDB21F8165320070E432 /* CVIOReplayKitSource.h */; };
 		DB3EFDB51F81654A0070E432 /* CVIOReplayKitSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EFDB41F81654A0070E432 /* CVIOReplayKitSource.m */; };
 		DB3EFDB71F8166B10070E432 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
+		DB44FEEE1FF45F6A00DD2646 /* SeaCatClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB6107A61F8241CF00945D9C /* CVIOInterfaces.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6107A51F8241CF00945D9C /* CVIOInterfaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB6EE1E31F7C5D20009B028B /* CatVisionIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB71F1F51F8A5F6B00820416 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
@@ -169,6 +170,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DB44FEEE1FF45F6A00DD2646 /* SeaCatClient.framework in CopyFiles */,
 				DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1016,7 +1018,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ios/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1092,7 +1094,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ios/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1442,7 +1444,7 @@
 				);
 				INFOPLIST_FILE = VNCServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1514,7 +1516,7 @@
 				);
 				INFOPLIST_FILE = VNCServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.teskalabs.cvio.VNCServer;

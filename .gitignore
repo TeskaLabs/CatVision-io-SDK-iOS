@@ -5,6 +5,7 @@
 ## Build generated
 build/
 DerivedData/
+bin/
 
 ## Various settings
 *.pbxuser
