@@ -138,6 +138,13 @@
 			remoteGlobalIDString = DB8397971FF7D45E00EA0EBD;
 			remoteInfo = vncserver;
 		};
+		DB83980B1FF81D9300EA0EBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8397971FF7D45E00EA0EBD;
+			remoteInfo = vncserver;
+		};
 		DB8628A41F7D861900849DFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
@@ -670,6 +677,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB83980C1FF81D9300EA0EBD /* PBXTargetDependency */,
 				DBD2E8BA1F8A62BF00C10169 /* PBXTargetDependency */,
 			);
 			name = "cvio-broadcast-ext";
@@ -930,6 +938,11 @@
 			target = DB8397971FF7D45E00EA0EBD /* vncserver */;
 			targetProxy = DB8397FE1FF7DA8E00EA0EBD /* PBXContainerItemProxy */;
 		};
+		DB83980C1FF81D9300EA0EBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8397971FF7D45E00EA0EBD /* vncserver */;
+			targetProxy = DB83980B1FF81D9300EA0EBD /* PBXContainerItemProxy */;
+		};
 		DB8628A51F7D861900849DFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DB6EE1DD1F7C5D20009B028B /* ios */;
@@ -1161,7 +1174,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1228,7 +1241,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1432,7 +1445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1500,7 +1513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
