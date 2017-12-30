@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DB1AEB791F805340003347EB /* CatVisionIO.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1AEB781F805340003347EB /* CatVisionIO.m */; };
-		DB3EFDA31F80FC620070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
+		DB3EFDA31F80FC620070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DB3EFDA41F80FC740070E432 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
 		DB3EFDA91F80FDBA0070E432 /* SeaCatClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB3EFDAB1F810B100070E432 /* CVIOSeaCatPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EFDAA1F810B100070E432 /* CVIOSeaCatPlugin.m */; };
 		DB3EFDAD1F810BAC0070E432 /* CVIOSeaCatPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3EFDAC1F810BA40070E432 /* CVIOSeaCatPlugin.h */; };
 		DB3EFDB31F8165320070E432 /* CVIOReplayKitSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3EFDB21F8165320070E432 /* CVIOReplayKitSource.h */; };
 		DB3EFDB51F81654A0070E432 /* CVIOReplayKitSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EFDB41F81654A0070E432 /* CVIOReplayKitSource.m */; };
-		DB3EFDB71F8166B10070E432 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
+		DB3EFDB71F8166B10070E432 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DB44FEEE1FF45F6A00DD2646 /* SeaCatClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB44FF1D1FF5F85900DD2646 /* SeaCatClient.framework in Headers */ = {isa = PBXBuildFile; fileRef = DB3EFDA21F80FC610070E432 /* SeaCatClient.framework */; };
 		DB44FF231FF5FB6800DD2646 /* CVIOSeaCatCSR.m in Sources */ = {isa = PBXBuildFile; fileRef = DB44FF221FF5FB6800DD2646 /* CVIOSeaCatCSR.m */; };
@@ -28,7 +28,7 @@
 		DB71F2061F8A60EF00820416 /* CatVisionIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; };
 		DB71F2071F8A60F200820416 /* SeaCatClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDA51F80FC8A0070E432 /* SeaCatClient.framework */; };
 		DB8628991F7D77B300849DFB /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628981F7D77B300849DFB /* jmemnobs.c */; };
-		DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
+		DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB86289F1F7D83F000849DFB /* arm_init.c in Sources */ = {isa = PBXBuildFile; fileRef = DB86289E1F7D83F000849DFB /* arm_init.c */; };
 		DB8628A11F7D842900849DFB /* filter_neon_intrinsics.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */; };
