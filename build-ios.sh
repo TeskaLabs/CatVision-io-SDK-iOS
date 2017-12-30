@@ -9,11 +9,7 @@
 # The result of the build process is one multi-architecture static library (also 
 # called as "fat") with all supported microprocessor architectures in one file.
 # 
-# Script is using following folders (if not changed):
-#
-#    ./lib/Debug       - result of debug configuration
-#    ./lib/Release     - result of release configuration
-#    ./tmp             - for all temporary data
+# Use: CODE_SIGN_IDENTITY="Ales Teska" ./build-ios.sh
 #
 # ----------------------------------------------------------------------------
 
@@ -142,6 +138,11 @@ function CLEAN_SCHEME
 	done
 }
 
+if [ -z "${CODE_SIGN_IDENTITY}" ] ; then
+	echo "CODE_SIGN_IDENTITY needs to be set for framework code-signing!"
+	exit 1
+fi
+
 rm -rf ${TMP_DIR}
 mkdir -p ${TMP_DIR}
 
@@ -153,3 +154,7 @@ FAT ios Release CatVisionIO
 echo "Bundling SeaCatClient headers"
 cp -r SeaCatClient/Headers/SeaCatClient ./bin/ios-Debug/CatVisionIO.framework/Headers/
 cp -r SeaCatClient/Headers/SeaCatClient ./bin/ios-Release/CatVisionIO.framework/Headers/
+
+echo "Signing ..."
+codesign -f -s "Ales Teska" -vvv ./bin/ios-Debug/CatVisionIO.framework
+codesign -f -s "Ales Teska" -vvv ./bin/ios-Release/CatVisionIO.framework
