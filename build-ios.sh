@@ -145,23 +145,11 @@ function CLEAN_SCHEME
 rm -rf ${TMP_DIR}
 mkdir -p ${TMP_DIR}
 
-BUILD_SCHEME VNCServer Debug
-BUILD_SCHEME VNCServer Release
-FAT VNCServer Debug VNCServer
-FAT VNCServer Release VNCServer
-
 BUILD_SCHEME ios Debug
 BUILD_SCHEME ios Release
 FAT ios Debug CatVisionIO
 FAT ios Release CatVisionIO
 
-echo "Replacing VNCServer"
-rm -rf ./bin/ios-Debug/CatVisionIO.framework/Frameworks/VNCServer.framework/
-mv ./bin/ios-Debug/VNCServer.framework ./bin/ios-Debug/CatVisionIO.framework/Frameworks
-
-rm -rf ./bin/ios-Release/CatVisionIO.framework/Frameworks/VNCServer.framework/
-mv ./bin/ios-Release/VNCServer.framework ./bin/ios-Release/CatVisionIO.framework/Frameworks
-
 echo "Bundling SeaCatClient headers"
-cp -r SeaCatClient.framework/Headers ./bin/ios-Debug/CatVisionIO.framework/Frameworks/SeaCatClient.framework/
-cp -r SeaCatClient.framework/Headers ./bin/ios-Release/CatVisionIO.framework/Frameworks/SeaCatClient.framework/
+cp -r SeaCatClient/Headers/SeaCatClient ./bin/ios-Debug/CatVisionIO.framework/Headers/
+cp -r SeaCatClient/Headers/SeaCatClient ./bin/ios-Release/CatVisionIO.framework/Headers/

@@ -27,14 +27,100 @@
 		DB8397901FF7D26800EA0EBD /* SeaCatClientInt.h in Headers */ = {isa = PBXBuildFile; fileRef = DB83978C1FF7D26800EA0EBD /* SeaCatClientInt.h */; };
 		DB8397911FF7D26800EA0EBD /* SeaCatPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = DB83978D1FF7D26800EA0EBD /* SeaCatPlugin.h */; };
 		DB8397931FF7D2CA00EA0EBD /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8397921FF7D2CA00EA0EBD /* libresolv.9.tbd */; };
-		DB8628991F7D77B300849DFB /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628981F7D77B300849DFB /* jmemnobs.c */; };
-		DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DB86289F1F7D83F000849DFB /* arm_init.c in Sources */ = {isa = PBXBuildFile; fileRef = DB86289E1F7D83F000849DFB /* arm_init.c */; };
-		DB8628A11F7D842900849DFB /* filter_neon_intrinsics.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */; };
+		DB8397A11FF7D4AE00EA0EBD /* pngwtran.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1391F7D6BA400BB0ABD /* pngwtran.c */; };
+		DB8397A21FF7D50200EA0EBD /* VNCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD6065C1F7D9EE700DFB3E7 /* VNCServer.m */; };
+		DB8397A31FF7D50800EA0EBD /* jaricom.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16B1F7D6C6500BB0ABD /* jaricom.c */; };
+		DB8397A41FF7D50B00EA0EBD /* jcapimin.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1611F7D6C6400BB0ABD /* jcapimin.c */; };
+		DB8397A51FF7D50E00EA0EBD /* jcapistd.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC14F1F7D6C6300BB0ABD /* jcapistd.c */; };
+		DB8397A61FF7D51100EA0EBD /* jcarith.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1731F7D6C6700BB0ABD /* jcarith.c */; };
+		DB8397A71FF7D51400EA0EBD /* jccoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1661F7D6C6500BB0ABD /* jccoefct.c */; };
+		DB8397A81FF7D51700EA0EBD /* jccolor.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1691F7D6C6500BB0ABD /* jccolor.c */; };
+		DB8397A91FF7D51D00EA0EBD /* jcdctmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15B1F7D6C6400BB0ABD /* jcdctmgr.c */; };
+		DB8397AA1FF7D52000EA0EBD /* jchuff.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1621F7D6C6400BB0ABD /* jchuff.c */; };
+		DB8397AB1FF7D52300EA0EBD /* jcinit.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1631F7D6C6400BB0ABD /* jcinit.c */; };
+		DB8397AC1FF7D52500EA0EBD /* jcmainct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1581F7D6C6300BB0ABD /* jcmainct.c */; };
+		DB8397AD1FF7D52900EA0EBD /* jcmarker.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1511F7D6C6300BB0ABD /* jcmarker.c */; };
+		DB8397AE1FF7D52C00EA0EBD /* jcmaster.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16A1F7D6C6500BB0ABD /* jcmaster.c */; };
+		DB8397AF1FF7D52F00EA0EBD /* jcomapi.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1711F7D6C6600BB0ABD /* jcomapi.c */; };
+		DB8397B01FF7D53300EA0EBD /* jcparam.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1551F7D6C6300BB0ABD /* jcparam.c */; };
+		DB8397B11FF7D53500EA0EBD /* jcprepct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15F1F7D6C6400BB0ABD /* jcprepct.c */; };
+		DB8397B21FF7D53800EA0EBD /* jcsample.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1761F7D6C6700BB0ABD /* jcsample.c */; };
+		DB8397B31FF7D53B00EA0EBD /* jctrans.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1541F7D6C6300BB0ABD /* jctrans.c */; };
+		DB8397B41FF7D54000EA0EBD /* jdapimin.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1591F7D6C6300BB0ABD /* jdapimin.c */; };
+		DB8397B51FF7D54200EA0EBD /* jdapistd.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1561F7D6C6300BB0ABD /* jdapistd.c */; };
+		DB8397B61FF7D54600EA0EBD /* jdarith.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1501F7D6C6300BB0ABD /* jdarith.c */; };
+		DB8397B71FF7D54900EA0EBD /* jdatadst.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16D1F7D6C6600BB0ABD /* jdatadst.c */; };
+		DB8397B81FF7D54D00EA0EBD /* jdatasrc.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16F1F7D6C6600BB0ABD /* jdatasrc.c */; };
+		DB8397B91FF7D55100EA0EBD /* jdcoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1601F7D6C6400BB0ABD /* jdcoefct.c */; };
+		DB8397BA1FF7D55500EA0EBD /* jdcolor.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1771F7D6C6700BB0ABD /* jdcolor.c */; };
+		DB8397BB1FF7D55900EA0EBD /* jddctmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1651F7D6C6500BB0ABD /* jddctmgr.c */; };
+		DB8397BC1FF7D55D00EA0EBD /* jdhuff.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15A1F7D6C6300BB0ABD /* jdhuff.c */; };
+		DB8397BD1FF7D55F00EA0EBD /* jdinput.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1721F7D6C6700BB0ABD /* jdinput.c */; };
+		DB8397BE1FF7D56200EA0EBD /* jdmainct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16C1F7D6C6600BB0ABD /* jdmainct.c */; };
+		DB8397BF1FF7D56500EA0EBD /* jdmarker.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1781F7D6C6800BB0ABD /* jdmarker.c */; };
+		DB8397C01FF7D56800EA0EBD /* jdmaster.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15D1F7D6C6400BB0ABD /* jdmaster.c */; };
+		DB8397C11FF7D56C00EA0EBD /* jdmerge.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC17A1F7D6C6800BB0ABD /* jdmerge.c */; };
+		DB8397C21FF7D56E00EA0EBD /* jdpostct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1571F7D6C6300BB0ABD /* jdpostct.c */; };
+		DB8397C31FF7D57200EA0EBD /* jdsample.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1701F7D6C6600BB0ABD /* jdsample.c */; };
+		DB8397C41FF7D57500EA0EBD /* jdtrans.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16E1F7D6C6600BB0ABD /* jdtrans.c */; };
+		DB8397C51FF7D57800EA0EBD /* jerror.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1681F7D6C6500BB0ABD /* jerror.c */; };
+		DB8397C61FF7D57B00EA0EBD /* jfdctflt.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC14E1F7D6C6300BB0ABD /* jfdctflt.c */; };
+		DB8397C71FF7D57E00EA0EBD /* jfdctfst.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1741F7D6C6700BB0ABD /* jfdctfst.c */; };
+		DB8397C81FF7D58200EA0EBD /* jfdctint.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15C1F7D6C6400BB0ABD /* jfdctint.c */; };
+		DB8397C91FF7D58400EA0EBD /* jidctflt.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1751F7D6C6700BB0ABD /* jidctflt.c */; };
+		DB8397CA1FF7D58800EA0EBD /* jidctfst.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1641F7D6C6400BB0ABD /* jidctfst.c */; };
+		DB8397CB1FF7D58B00EA0EBD /* jidctint.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1531F7D6C6300BB0ABD /* jidctint.c */; };
+		DB8397CC1FF7D58D00EA0EBD /* jmemmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1521F7D6C6300BB0ABD /* jmemmgr.c */; };
+		DB8397CD1FF7D59100EA0EBD /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628981F7D77B300849DFB /* jmemnobs.c */; };
+		DB8397CE1FF7D59300EA0EBD /* jquant1.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1791F7D6C6800BB0ABD /* jquant1.c */; };
+		DB8397CF1FF7D59600EA0EBD /* jquant2.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1671F7D6C6500BB0ABD /* jquant2.c */; };
+		DB8397D01FF7D59900EA0EBD /* jutils.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15E1F7D6C6400BB0ABD /* jutils.c */; };
+		DB8397D11FF7D5AD00EA0EBD /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1321F7D6BA300BB0ABD /* png.c */; };
+		DB8397D21FF7D5B800EA0EBD /* pngerror.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC13B1F7D6BA400BB0ABD /* pngerror.c */; };
+		DB8397D31FF7D5BB00EA0EBD /* pngget.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1301F7D6BA300BB0ABD /* pngget.c */; };
+		DB8397D41FF7D5BE00EA0EBD /* pngmem.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1331F7D6BA300BB0ABD /* pngmem.c */; };
+		DB8397D51FF7D5C100EA0EBD /* pngpread.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC12F1F7D6BA300BB0ABD /* pngpread.c */; };
+		DB8397D61FF7D5C700EA0EBD /* pngread.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC13D1F7D6BA400BB0ABD /* pngread.c */; };
+		DB8397D71FF7D5CF00EA0EBD /* pngrio.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1311F7D6BA300BB0ABD /* pngrio.c */; };
+		DB8397D81FF7D5D600EA0EBD /* pngrtran.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1381F7D6BA400BB0ABD /* pngrtran.c */; };
+		DB8397D91FF7D5D900EA0EBD /* pngrutil.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1361F7D6BA300BB0ABD /* pngrutil.c */; };
+		DB8397DA1FF7D5DD00EA0EBD /* pngset.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC13C1F7D6BA400BB0ABD /* pngset.c */; };
+		DB8397DB1FF7D5DF00EA0EBD /* pngtrans.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1371F7D6BA400BB0ABD /* pngtrans.c */; };
+		DB8397DC1FF7D5E200EA0EBD /* pngwio.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1341F7D6BA300BB0ABD /* pngwio.c */; };
+		DB8397DD1FF7D5E500EA0EBD /* pngwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1351F7D6BA300BB0ABD /* pngwrite.c */; };
+		DB8397DE1FF7D5EA00EA0EBD /* pngwutil.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC13A1F7D6BA400BB0ABD /* pngwutil.c */; };
+		DB8397DF1FF7D5EC00EA0EBD /* arm_init.c in Sources */ = {isa = PBXBuildFile; fileRef = DB86289E1F7D83F000849DFB /* arm_init.c */; };
+		DB8397E01FF7D5EF00EA0EBD /* filter_neon_intrinsics.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */; };
+		DB8397E11FF7D5F400EA0EBD /* auth.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1001F7D698700BB0ABD /* auth.c */; };
+		DB8397E21FF7D5F800EA0EBD /* cargs.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1011F7D698700BB0ABD /* cargs.c */; };
+		DB8397E31FF7D5FB00EA0EBD /* corre.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1021F7D698700BB0ABD /* corre.c */; };
+		DB8397E41FF7D5FF00EA0EBD /* cursor.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1031F7D698700BB0ABD /* cursor.c */; };
+		DB8397E51FF7D60200EA0EBD /* cutpaste.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1061F7D698700BB0ABD /* cutpaste.c */; };
+		DB8397E61FF7D60600EA0EBD /* draw.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0FD1F7D698700BB0ABD /* draw.c */; };
+		DB8397E71FF7D60900EA0EBD /* font.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1041F7D698700BB0ABD /* font.c */; };
+		DB8397E81FF7D60D00EA0EBD /* hextile.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1051F7D698700BB0ABD /* hextile.c */; };
+		DB8397E91FF7D61200EA0EBD /* httpd.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0FF1F7D698700BB0ABD /* httpd.c */; };
+		DB8397EA1FF7D61600EA0EBD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0FE1F7D698700BB0ABD /* main.c */; };
+		DB8397EB1FF7D61900EA0EBD /* rfbregion.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1141F7D69BA00BB0ABD /* rfbregion.c */; };
+		DB8397EC1FF7D61D00EA0EBD /* rfbserver.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1161F7D69BA00BB0ABD /* rfbserver.c */; };
+		DB8397ED1FF7D62100EA0EBD /* rre.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1181F7D69BA00BB0ABD /* rre.c */; };
+		DB8397EE1FF7D62400EA0EBD /* scale.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11A1F7D69BA00BB0ABD /* scale.c */; };
+		DB8397EF1FF7D62700EA0EBD /* selbox.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1121F7D69BA00BB0ABD /* selbox.c */; };
+		DB8397F01FF7D62A00EA0EBD /* sockets.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1191F7D69BA00BB0ABD /* sockets.c */; };
+		DB8397F11FF7D62D00EA0EBD /* stats.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1131F7D69BA00BB0ABD /* stats.c */; };
+		DB8397F21FF7D63000EA0EBD /* tight.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1111F7D69BA00BB0ABD /* tight.c */; };
+		DB8397F31FF7D63300EA0EBD /* translate.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1151F7D69BA00BB0ABD /* translate.c */; };
+		DB8397F41FF7D63600EA0EBD /* ultra.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11C1F7D69BB00BB0ABD /* ultra.c */; };
+		DB8397F51FF7D63800EA0EBD /* zlib.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11E1F7D69BB00BB0ABD /* zlib.c */; };
+		DB8397F61FF7D63B00EA0EBD /* zrle.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11B1F7D69BB00BB0ABD /* zrle.c */; };
+		DB8397F71FF7D63E00EA0EBD /* zrleoutstream.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11D1F7D69BB00BB0ABD /* zrleoutstream.c */; };
+		DB8397F81FF7D64100EA0EBD /* zrlepalettehelper.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1171F7D69BA00BB0ABD /* zrlepalettehelper.c */; };
+		DB8397F91FF7D64300EA0EBD /* d3des.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1AA1F7D6DF100BB0ABD /* d3des.c */; };
+		DB8397FA1FF7D64600EA0EBD /* minilzo.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1A81F7D6DF000BB0ABD /* minilzo.c */; };
+		DB8397FB1FF7D64900EA0EBD /* turbojpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1A91F7D6DF100BB0ABD /* turbojpeg.c */; };
+		DB8397FC1FF7D64E00EA0EBD /* vncauth.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1AB1F7D6DF100BB0ABD /* vncauth.c */; };
+		DB8397FD1FF7D85000EA0EBD /* libvncserver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8397981FF7D45E00EA0EBD /* libvncserver.a */; };
 		DB8628A31F7D861900849DFB /* CatVisionIO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DB8628A71F7D865100849DFB /* VNCServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; };
-		DB8628A81F7D865100849DFB /* VNCServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBBFC0781F7D55D400BB0ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0771F7D55D400BB0ABD /* AppDelegate.m */; };
 		DBBFC07B1F7D55D400BB0ABD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC07A1F7D55D400BB0ABD /* MainViewController.m */; };
 		DBBFC07E1F7D55D400BB0ABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBFC07C1F7D55D400BB0ABD /* Main.storyboard */; };
@@ -42,112 +128,22 @@
 		DBBFC0831F7D55D400BB0ABD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBFC0811F7D55D400BB0ABD /* LaunchScreen.storyboard */; };
 		DBBFC0861F7D55D400BB0ABD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0851F7D55D400BB0ABD /* main.m */; };
 		DBBFC08A1F7D55E600BB0ABD /* CatVisionIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; };
-		DBBFC0961F7D609A00BB0ABD /* VNCServer.h in Headers */ = {isa = PBXBuildFile; fileRef = DBBFC0941F7D609A00BB0ABD /* VNCServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBBFC1071F7D698800BB0ABD /* draw.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0FD1F7D698700BB0ABD /* draw.c */; };
-		DBBFC1081F7D698800BB0ABD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0FE1F7D698700BB0ABD /* main.c */; };
-		DBBFC1091F7D698800BB0ABD /* httpd.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC0FF1F7D698700BB0ABD /* httpd.c */; };
-		DBBFC10A1F7D698800BB0ABD /* auth.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1001F7D698700BB0ABD /* auth.c */; };
-		DBBFC10B1F7D698800BB0ABD /* cargs.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1011F7D698700BB0ABD /* cargs.c */; };
-		DBBFC10C1F7D698800BB0ABD /* corre.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1021F7D698700BB0ABD /* corre.c */; };
-		DBBFC10D1F7D698800BB0ABD /* cursor.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1031F7D698700BB0ABD /* cursor.c */; };
-		DBBFC10E1F7D698800BB0ABD /* font.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1041F7D698700BB0ABD /* font.c */; };
-		DBBFC10F1F7D698800BB0ABD /* hextile.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1051F7D698700BB0ABD /* hextile.c */; };
-		DBBFC1101F7D698800BB0ABD /* cutpaste.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1061F7D698700BB0ABD /* cutpaste.c */; };
-		DBBFC11F1F7D69BB00BB0ABD /* tight.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1111F7D69BA00BB0ABD /* tight.c */; };
-		DBBFC1201F7D69BB00BB0ABD /* selbox.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1121F7D69BA00BB0ABD /* selbox.c */; };
-		DBBFC1211F7D69BB00BB0ABD /* stats.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1131F7D69BA00BB0ABD /* stats.c */; };
-		DBBFC1221F7D69BB00BB0ABD /* rfbregion.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1141F7D69BA00BB0ABD /* rfbregion.c */; };
-		DBBFC1231F7D69BB00BB0ABD /* translate.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1151F7D69BA00BB0ABD /* translate.c */; };
-		DBBFC1241F7D69BB00BB0ABD /* rfbserver.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1161F7D69BA00BB0ABD /* rfbserver.c */; };
-		DBBFC1251F7D69BB00BB0ABD /* zrlepalettehelper.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1171F7D69BA00BB0ABD /* zrlepalettehelper.c */; };
-		DBBFC1261F7D69BB00BB0ABD /* rre.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1181F7D69BA00BB0ABD /* rre.c */; };
-		DBBFC1271F7D69BB00BB0ABD /* sockets.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1191F7D69BA00BB0ABD /* sockets.c */; };
-		DBBFC1281F7D69BB00BB0ABD /* scale.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11A1F7D69BA00BB0ABD /* scale.c */; };
-		DBBFC1291F7D69BB00BB0ABD /* zrle.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11B1F7D69BB00BB0ABD /* zrle.c */; };
-		DBBFC12A1F7D69BB00BB0ABD /* ultra.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11C1F7D69BB00BB0ABD /* ultra.c */; };
-		DBBFC12B1F7D69BB00BB0ABD /* zrleoutstream.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11D1F7D69BB00BB0ABD /* zrleoutstream.c */; };
-		DBBFC12C1F7D69BB00BB0ABD /* zlib.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC11E1F7D69BB00BB0ABD /* zlib.c */; };
-		DBBFC13E1F7D6BA400BB0ABD /* pngpread.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC12F1F7D6BA300BB0ABD /* pngpread.c */; };
-		DBBFC13F1F7D6BA400BB0ABD /* pngget.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1301F7D6BA300BB0ABD /* pngget.c */; };
-		DBBFC1401F7D6BA400BB0ABD /* pngrio.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1311F7D6BA300BB0ABD /* pngrio.c */; };
-		DBBFC1411F7D6BA400BB0ABD /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1321F7D6BA300BB0ABD /* png.c */; };
-		DBBFC1421F7D6BA400BB0ABD /* pngmem.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1331F7D6BA300BB0ABD /* pngmem.c */; };
-		DBBFC1431F7D6BA400BB0ABD /* pngwio.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1341F7D6BA300BB0ABD /* pngwio.c */; };
-		DBBFC1441F7D6BA400BB0ABD /* pngwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1351F7D6BA300BB0ABD /* pngwrite.c */; };
-		DBBFC1451F7D6BA400BB0ABD /* pngrutil.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1361F7D6BA300BB0ABD /* pngrutil.c */; };
-		DBBFC1461F7D6BA400BB0ABD /* pngtrans.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1371F7D6BA400BB0ABD /* pngtrans.c */; };
-		DBBFC1471F7D6BA400BB0ABD /* pngrtran.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1381F7D6BA400BB0ABD /* pngrtran.c */; };
-		DBBFC1481F7D6BA400BB0ABD /* pngwtran.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1391F7D6BA400BB0ABD /* pngwtran.c */; };
-		DBBFC1491F7D6BA400BB0ABD /* pngwutil.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC13A1F7D6BA400BB0ABD /* pngwutil.c */; };
-		DBBFC14A1F7D6BA400BB0ABD /* pngerror.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC13B1F7D6BA400BB0ABD /* pngerror.c */; };
-		DBBFC14B1F7D6BA400BB0ABD /* pngset.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC13C1F7D6BA400BB0ABD /* pngset.c */; };
-		DBBFC14C1F7D6BA400BB0ABD /* pngread.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC13D1F7D6BA400BB0ABD /* pngread.c */; };
-		DBBFC17B1F7D6C6800BB0ABD /* jfdctflt.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC14E1F7D6C6300BB0ABD /* jfdctflt.c */; };
-		DBBFC17C1F7D6C6800BB0ABD /* jcapistd.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC14F1F7D6C6300BB0ABD /* jcapistd.c */; };
-		DBBFC17D1F7D6C6800BB0ABD /* jdarith.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1501F7D6C6300BB0ABD /* jdarith.c */; };
-		DBBFC17E1F7D6C6800BB0ABD /* jcmarker.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1511F7D6C6300BB0ABD /* jcmarker.c */; };
-		DBBFC17F1F7D6C6800BB0ABD /* jmemmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1521F7D6C6300BB0ABD /* jmemmgr.c */; };
-		DBBFC1801F7D6C6800BB0ABD /* jidctint.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1531F7D6C6300BB0ABD /* jidctint.c */; };
-		DBBFC1811F7D6C6800BB0ABD /* jctrans.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1541F7D6C6300BB0ABD /* jctrans.c */; };
-		DBBFC1821F7D6C6800BB0ABD /* jcparam.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1551F7D6C6300BB0ABD /* jcparam.c */; };
-		DBBFC1831F7D6C6800BB0ABD /* jdapistd.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1561F7D6C6300BB0ABD /* jdapistd.c */; };
-		DBBFC1841F7D6C6800BB0ABD /* jdpostct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1571F7D6C6300BB0ABD /* jdpostct.c */; };
-		DBBFC1851F7D6C6800BB0ABD /* jcmainct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1581F7D6C6300BB0ABD /* jcmainct.c */; };
-		DBBFC1861F7D6C6800BB0ABD /* jdapimin.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1591F7D6C6300BB0ABD /* jdapimin.c */; };
-		DBBFC1871F7D6C6800BB0ABD /* jdhuff.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15A1F7D6C6300BB0ABD /* jdhuff.c */; };
-		DBBFC1881F7D6C6800BB0ABD /* jcdctmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15B1F7D6C6400BB0ABD /* jcdctmgr.c */; };
-		DBBFC1891F7D6C6800BB0ABD /* jfdctint.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15C1F7D6C6400BB0ABD /* jfdctint.c */; };
-		DBBFC18A1F7D6C6800BB0ABD /* jdmaster.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15D1F7D6C6400BB0ABD /* jdmaster.c */; };
-		DBBFC18B1F7D6C6800BB0ABD /* jutils.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15E1F7D6C6400BB0ABD /* jutils.c */; };
-		DBBFC18C1F7D6C6800BB0ABD /* jcprepct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC15F1F7D6C6400BB0ABD /* jcprepct.c */; };
-		DBBFC18D1F7D6C6800BB0ABD /* jdcoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1601F7D6C6400BB0ABD /* jdcoefct.c */; };
-		DBBFC18E1F7D6C6800BB0ABD /* jcapimin.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1611F7D6C6400BB0ABD /* jcapimin.c */; };
-		DBBFC18F1F7D6C6800BB0ABD /* jchuff.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1621F7D6C6400BB0ABD /* jchuff.c */; };
-		DBBFC1901F7D6C6800BB0ABD /* jcinit.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1631F7D6C6400BB0ABD /* jcinit.c */; };
-		DBBFC1911F7D6C6800BB0ABD /* jidctfst.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1641F7D6C6400BB0ABD /* jidctfst.c */; };
-		DBBFC1921F7D6C6800BB0ABD /* jddctmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1651F7D6C6500BB0ABD /* jddctmgr.c */; };
-		DBBFC1931F7D6C6800BB0ABD /* jccoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1661F7D6C6500BB0ABD /* jccoefct.c */; };
-		DBBFC1941F7D6C6800BB0ABD /* jquant2.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1671F7D6C6500BB0ABD /* jquant2.c */; };
-		DBBFC1951F7D6C6800BB0ABD /* jerror.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1681F7D6C6500BB0ABD /* jerror.c */; };
-		DBBFC1961F7D6C6800BB0ABD /* jccolor.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1691F7D6C6500BB0ABD /* jccolor.c */; };
-		DBBFC1971F7D6C6800BB0ABD /* jcmaster.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16A1F7D6C6500BB0ABD /* jcmaster.c */; };
-		DBBFC1981F7D6C6800BB0ABD /* jaricom.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16B1F7D6C6500BB0ABD /* jaricom.c */; };
-		DBBFC1991F7D6C6800BB0ABD /* jdmainct.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16C1F7D6C6600BB0ABD /* jdmainct.c */; };
-		DBBFC19A1F7D6C6800BB0ABD /* jdatadst.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16D1F7D6C6600BB0ABD /* jdatadst.c */; };
-		DBBFC19B1F7D6C6800BB0ABD /* jdtrans.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16E1F7D6C6600BB0ABD /* jdtrans.c */; };
-		DBBFC19C1F7D6C6800BB0ABD /* jdatasrc.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC16F1F7D6C6600BB0ABD /* jdatasrc.c */; };
-		DBBFC19D1F7D6C6800BB0ABD /* jdsample.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1701F7D6C6600BB0ABD /* jdsample.c */; };
-		DBBFC19E1F7D6C6800BB0ABD /* jcomapi.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1711F7D6C6600BB0ABD /* jcomapi.c */; };
-		DBBFC19F1F7D6C6800BB0ABD /* jdinput.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1721F7D6C6700BB0ABD /* jdinput.c */; };
-		DBBFC1A01F7D6C6800BB0ABD /* jcarith.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1731F7D6C6700BB0ABD /* jcarith.c */; };
-		DBBFC1A11F7D6C6800BB0ABD /* jfdctfst.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1741F7D6C6700BB0ABD /* jfdctfst.c */; };
-		DBBFC1A21F7D6C6800BB0ABD /* jidctflt.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1751F7D6C6700BB0ABD /* jidctflt.c */; };
-		DBBFC1A31F7D6C6800BB0ABD /* jcsample.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1761F7D6C6700BB0ABD /* jcsample.c */; };
-		DBBFC1A41F7D6C6800BB0ABD /* jdcolor.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1771F7D6C6700BB0ABD /* jdcolor.c */; };
-		DBBFC1A51F7D6C6800BB0ABD /* jdmarker.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1781F7D6C6800BB0ABD /* jdmarker.c */; };
-		DBBFC1A61F7D6C6800BB0ABD /* jquant1.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1791F7D6C6800BB0ABD /* jquant1.c */; };
-		DBBFC1A71F7D6C6800BB0ABD /* jdmerge.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC17A1F7D6C6800BB0ABD /* jdmerge.c */; };
-		DBBFC1AC1F7D6DF100BB0ABD /* minilzo.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1A81F7D6DF000BB0ABD /* minilzo.c */; };
-		DBBFC1AD1F7D6DF100BB0ABD /* turbojpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1A91F7D6DF100BB0ABD /* turbojpeg.c */; };
-		DBBFC1AE1F7D6DF100BB0ABD /* d3des.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1AA1F7D6DF100BB0ABD /* d3des.c */; };
-		DBBFC1AF1F7D6DF100BB0ABD /* vncauth.c in Sources */ = {isa = PBXBuildFile; fileRef = DBBFC1AB1F7D6DF100BB0ABD /* vncauth.c */; };
-		DBD6065D1F7D9EE700DFB3E7 /* VNCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD6065C1F7D9EE700DFB3E7 /* VNCServer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DB8397FE1FF7DA8E00EA0EBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8397971FF7D45E00EA0EBD;
+			remoteInfo = vncserver;
+		};
 		DB8628A41F7D861900849DFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DB6EE1DD1F7C5D20009B028B;
 			remoteInfo = ios;
-		};
-		DB8628A91F7D865100849DFB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DBBFC0911F7D609A00BB0ABD;
-			remoteInfo = VNCServer;
 		};
 		DBD2E8B71F8A62B400C10169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -166,13 +162,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		DB8397961FF7D45E00EA0EBD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB86289B1F7D793B00849DFB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DB86289D1F7D7D2400849DFB /* VNCServer.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +187,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				DB8628A31F7D861900849DFB /* CatVisionIO.framework in Embed Frameworks */,
-				DB8628A81F7D865100849DFB /* VNCServer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +230,7 @@
 		DB83978C1FF7D26800EA0EBD /* SeaCatClientInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeaCatClientInt.h; sourceTree = "<group>"; };
 		DB83978D1FF7D26800EA0EBD /* SeaCatPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeaCatPlugin.h; sourceTree = "<group>"; };
 		DB8397921FF7D2CA00EA0EBD /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/usr/lib/libresolv.9.tbd; sourceTree = DEVELOPER_DIR; };
+		DB8397981FF7D45E00EA0EBD /* libvncserver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libvncserver.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8628981F7D77B300849DFB /* jmemnobs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jmemnobs.c; path = jpeg/jmemnobs.c; sourceTree = "<group>"; };
 		DB86289E1F7D83F000849DFB /* arm_init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = arm_init.c; path = libpng/arm/arm_init.c; sourceTree = "<group>"; };
 		DB8628A01F7D842900849DFB /* filter_neon_intrinsics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = filter_neon_intrinsics.c; path = libpng/arm/filter_neon_intrinsics.c; sourceTree = "<group>"; };
@@ -240,7 +244,6 @@
 		DBBFC0821F7D55D400BB0ABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBBFC0841F7D55D400BB0ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBBFC0851F7D55D400BB0ABD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VNCServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBFC0941F7D609A00BB0ABD /* VNCServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VNCServer.h; sourceTree = "<group>"; };
 		DBBFC0951F7D609A00BB0ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBBFC0FD1F7D698700BB0ABD /* draw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = draw.c; path = libvncserver/libvncserver/draw.c; sourceTree = "<group>"; };
@@ -340,9 +343,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB8397FD1FF7D85000EA0EBD /* libvncserver.a in Frameworks */,
 				DB8397931FF7D2CA00EA0EBD /* libresolv.9.tbd in Frameworks */,
 				DB3EFDB71F8166B10070E432 /* ReplayKit.framework in Frameworks */,
-				DB86289A1F7D77DD00849DFB /* VNCServer.framework in Frameworks */,
 				DB8397861FF7D1CF00EA0EBD /* libseacatclientios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,19 +359,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB8397951FF7D45E00EA0EBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBBFC0711F7D55D400BB0ABD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DBBFC08A1F7D55E600BB0ABD /* CatVisionIO.framework in Frameworks */,
-				DB8628A71F7D865100849DFB /* VNCServer.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBBFC08E1F7D609A00BB0ABD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,8 +391,8 @@
 			children = (
 				DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */,
 				DBBFC0741F7D55D400BB0ABD /* app.app */,
-				DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */,
 				DB71F1F41F8A5F6A00820416 /* cvio-broadcast-ext.appex */,
+				DB8397981FF7D45E00EA0EBD /* libvncserver.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -635,14 +637,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBBFC08F1F7D609A00BB0ABD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DBBFC0961F7D609A00BB0ABD /* VNCServer.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -683,6 +677,23 @@
 			productReference = DB71F1F41F8A5F6A00820416 /* cvio-broadcast-ext.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		DB8397971FF7D45E00EA0EBD /* vncserver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB83979E1FF7D45E00EA0EBD /* Build configuration list for PBXNativeTarget "vncserver" */;
+			buildPhases = (
+				DB8397941FF7D45E00EA0EBD /* Sources */,
+				DB8397951FF7D45E00EA0EBD /* Frameworks */,
+				DB8397961FF7D45E00EA0EBD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vncserver;
+			productName = vncserver;
+			productReference = DB8397981FF7D45E00EA0EBD /* libvncserver.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		DBBFC0731F7D55D400BB0ABD /* app */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBBFC0891F7D55D400BB0ABD /* Build configuration list for PBXNativeTarget "app" */;
@@ -696,33 +707,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB8397FF1FF7DA8E00EA0EBD /* PBXTargetDependency */,
 				DBD2E8B81F8A62B400C10169 /* PBXTargetDependency */,
 				DB8628A51F7D861900849DFB /* PBXTargetDependency */,
-				DB8628AA1F7D865100849DFB /* PBXTargetDependency */,
 			);
 			name = app;
 			productName = app;
 			productReference = DBBFC0741F7D55D400BB0ABD /* app.app */;
 			productType = "com.apple.product-type.application";
-		};
-		DBBFC0911F7D609A00BB0ABD /* VNCServer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DBBFC0971F7D609A00BB0ABD /* Build configuration list for PBXNativeTarget "VNCServer" */;
-			buildPhases = (
-				DBD6065F1F7EF90500DFB3E7 /* ShellScript */,
-				DBBFC08D1F7D609A00BB0ABD /* Sources */,
-				DBBFC08E1F7D609A00BB0ABD /* Frameworks */,
-				DBBFC08F1F7D609A00BB0ABD /* Headers */,
-				DBBFC0901F7D609A00BB0ABD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = VNCServer;
-			productName = VNCServer;
-			productReference = DBBFC0921F7D609A00BB0ABD /* VNCServer.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -742,11 +734,11 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
-					DBBFC0731F7D55D400BB0ABD = {
-						CreatedOnToolsVersion = 9.0;
+					DB8397971FF7D45E00EA0EBD = {
+						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
-					DBBFC0911F7D609A00BB0ABD = {
+					DBBFC0731F7D55D400BB0ABD = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -767,7 +759,7 @@
 			targets = (
 				DB6EE1DD1F7C5D20009B028B /* ios */,
 				DBBFC0731F7D55D400BB0ABD /* app */,
-				DBBFC0911F7D609A00BB0ABD /* VNCServer */,
+				DB8397971FF7D45E00EA0EBD /* vncserver */,
 				DB71F1F31F8A5F6A00820416 /* cvio-broadcast-ext */,
 			);
 		};
@@ -798,31 +790,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBBFC0901F7D609A00BB0ABD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DBD6065F1F7EF90500DFB3E7 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "(cd ${PROJECT_DIR}/VNCServer && ./configure.sh)\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB6EE1D91F7C5D20009B028B /* Sources */ = {
@@ -845,6 +813,105 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB8397941FF7D45E00EA0EBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8397E11FF7D5F400EA0EBD /* auth.c in Sources */,
+				DB8397D11FF7D5AD00EA0EBD /* png.c in Sources */,
+				DB8397F21FF7D63000EA0EBD /* tight.c in Sources */,
+				DB8397B71FF7D54900EA0EBD /* jdatadst.c in Sources */,
+				DB8397AE1FF7D52C00EA0EBD /* jcmaster.c in Sources */,
+				DB8397E91FF7D61200EA0EBD /* httpd.c in Sources */,
+				DB8397B11FF7D53500EA0EBD /* jcprepct.c in Sources */,
+				DB8397EE1FF7D62400EA0EBD /* scale.c in Sources */,
+				DB8397B21FF7D53800EA0EBD /* jcsample.c in Sources */,
+				DB8397E71FF7D60900EA0EBD /* font.c in Sources */,
+				DB8397D01FF7D59900EA0EBD /* jutils.c in Sources */,
+				DB8397DA1FF7D5DD00EA0EBD /* pngset.c in Sources */,
+				DB8397B41FF7D54000EA0EBD /* jdapimin.c in Sources */,
+				DB8397AD1FF7D52900EA0EBD /* jcmarker.c in Sources */,
+				DB8397CD1FF7D59100EA0EBD /* jmemnobs.c in Sources */,
+				DB8397CA1FF7D58800EA0EBD /* jidctfst.c in Sources */,
+				DB8397AC1FF7D52500EA0EBD /* jcmainct.c in Sources */,
+				DB8397B51FF7D54200EA0EBD /* jdapistd.c in Sources */,
+				DB8397BB1FF7D55900EA0EBD /* jddctmgr.c in Sources */,
+				DB8397C11FF7D56C00EA0EBD /* jdmerge.c in Sources */,
+				DB8397AF1FF7D52F00EA0EBD /* jcomapi.c in Sources */,
+				DB8397CF1FF7D59600EA0EBD /* jquant2.c in Sources */,
+				DB8397E21FF7D5F800EA0EBD /* cargs.c in Sources */,
+				DB8397FB1FF7D64900EA0EBD /* turbojpeg.c in Sources */,
+				DB8397F01FF7D62A00EA0EBD /* sockets.c in Sources */,
+				DB8397BA1FF7D55500EA0EBD /* jdcolor.c in Sources */,
+				DB8397F51FF7D63800EA0EBD /* zlib.c in Sources */,
+				DB8397CE1FF7D59300EA0EBD /* jquant1.c in Sources */,
+				DB8397D21FF7D5B800EA0EBD /* pngerror.c in Sources */,
+				DB8397D91FF7D5D900EA0EBD /* pngrutil.c in Sources */,
+				DB8397EC1FF7D61D00EA0EBD /* rfbserver.c in Sources */,
+				DB8397D51FF7D5C100EA0EBD /* pngpread.c in Sources */,
+				DB8397EB1FF7D61900EA0EBD /* rfbregion.c in Sources */,
+				DB8397CC1FF7D58D00EA0EBD /* jmemmgr.c in Sources */,
+				DB8397EF1FF7D62700EA0EBD /* selbox.c in Sources */,
+				DB8397E51FF7D60200EA0EBD /* cutpaste.c in Sources */,
+				DB8397E31FF7D5FB00EA0EBD /* corre.c in Sources */,
+				DB8397B61FF7D54600EA0EBD /* jdarith.c in Sources */,
+				DB8397BF1FF7D56500EA0EBD /* jdmarker.c in Sources */,
+				DB8397FA1FF7D64600EA0EBD /* minilzo.c in Sources */,
+				DB8397D61FF7D5C700EA0EBD /* pngread.c in Sources */,
+				DB8397A71FF7D51400EA0EBD /* jccoefct.c in Sources */,
+				DB8397CB1FF7D58B00EA0EBD /* jidctint.c in Sources */,
+				DB8397F11FF7D62D00EA0EBD /* stats.c in Sources */,
+				DB8397A91FF7D51D00EA0EBD /* jcdctmgr.c in Sources */,
+				DB8397F31FF7D63300EA0EBD /* translate.c in Sources */,
+				DB8397A51FF7D50E00EA0EBD /* jcapistd.c in Sources */,
+				DB8397F91FF7D64300EA0EBD /* d3des.c in Sources */,
+				DB8397EA1FF7D61600EA0EBD /* main.c in Sources */,
+				DB8397D71FF7D5CF00EA0EBD /* pngrio.c in Sources */,
+				DB8397B91FF7D55100EA0EBD /* jdcoefct.c in Sources */,
+				DB8397E81FF7D60D00EA0EBD /* hextile.c in Sources */,
+				DB8397F41FF7D63600EA0EBD /* ultra.c in Sources */,
+				DB8397E41FF7D5FF00EA0EBD /* cursor.c in Sources */,
+				DB8397AA1FF7D52000EA0EBD /* jchuff.c in Sources */,
+				DB8397ED1FF7D62100EA0EBD /* rre.c in Sources */,
+				DB8397D81FF7D5D600EA0EBD /* pngrtran.c in Sources */,
+				DB8397B31FF7D53B00EA0EBD /* jctrans.c in Sources */,
+				DB8397E01FF7D5EF00EA0EBD /* filter_neon_intrinsics.c in Sources */,
+				DB8397D31FF7D5BB00EA0EBD /* pngget.c in Sources */,
+				DB8397B81FF7D54D00EA0EBD /* jdatasrc.c in Sources */,
+				DB8397DE1FF7D5EA00EA0EBD /* pngwutil.c in Sources */,
+				DB8397BD1FF7D55F00EA0EBD /* jdinput.c in Sources */,
+				DB8397F61FF7D63B00EA0EBD /* zrle.c in Sources */,
+				DB8397E61FF7D60600EA0EBD /* draw.c in Sources */,
+				DB8397C31FF7D57200EA0EBD /* jdsample.c in Sources */,
+				DB8397C21FF7D56E00EA0EBD /* jdpostct.c in Sources */,
+				DB8397F71FF7D63E00EA0EBD /* zrleoutstream.c in Sources */,
+				DB8397C41FF7D57500EA0EBD /* jdtrans.c in Sources */,
+				DB8397DD1FF7D5E500EA0EBD /* pngwrite.c in Sources */,
+				DB8397C91FF7D58400EA0EBD /* jidctflt.c in Sources */,
+				DB8397C81FF7D58200EA0EBD /* jfdctint.c in Sources */,
+				DB8397DF1FF7D5EC00EA0EBD /* arm_init.c in Sources */,
+				DB8397C01FF7D56800EA0EBD /* jdmaster.c in Sources */,
+				DB8397B01FF7D53300EA0EBD /* jcparam.c in Sources */,
+				DB8397BC1FF7D55D00EA0EBD /* jdhuff.c in Sources */,
+				DB8397C51FF7D57800EA0EBD /* jerror.c in Sources */,
+				DB8397A31FF7D50800EA0EBD /* jaricom.c in Sources */,
+				DB8397BE1FF7D56200EA0EBD /* jdmainct.c in Sources */,
+				DB8397FC1FF7D64E00EA0EBD /* vncauth.c in Sources */,
+				DB8397C71FF7D57E00EA0EBD /* jfdctfst.c in Sources */,
+				DB8397A21FF7D50200EA0EBD /* VNCServer.m in Sources */,
+				DB8397DB1FF7D5DF00EA0EBD /* pngtrans.c in Sources */,
+				DB8397A61FF7D51100EA0EBD /* jcarith.c in Sources */,
+				DB8397F81FF7D64100EA0EBD /* zrlepalettehelper.c in Sources */,
+				DB8397DC1FF7D5E200EA0EBD /* pngwio.c in Sources */,
+				DB8397A41FF7D50B00EA0EBD /* jcapimin.c in Sources */,
+				DB8397A81FF7D51700EA0EBD /* jccolor.c in Sources */,
+				DB8397AB1FF7D52300EA0EBD /* jcinit.c in Sources */,
+				DB8397D41FF7D5BE00EA0EBD /* pngmem.c in Sources */,
+				DB8397C61FF7D57B00EA0EBD /* jfdctflt.c in Sources */,
+				DB8397A11FF7D4AE00EA0EBD /* pngwtran.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBBFC0701F7D55D400BB0ABD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -855,117 +922,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBBFC08D1F7D609A00BB0ABD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DBBFC1461F7D6BA400BB0ABD /* pngtrans.c in Sources */,
-				DB8628991F7D77B300849DFB /* jmemnobs.c in Sources */,
-				DBBFC1801F7D6C6800BB0ABD /* jidctint.c in Sources */,
-				DBBFC10D1F7D698800BB0ABD /* cursor.c in Sources */,
-				DBBFC19E1F7D6C6800BB0ABD /* jcomapi.c in Sources */,
-				DBBFC1251F7D69BB00BB0ABD /* zrlepalettehelper.c in Sources */,
-				DBBFC11F1F7D69BB00BB0ABD /* tight.c in Sources */,
-				DBBFC1211F7D69BB00BB0ABD /* stats.c in Sources */,
-				DBBFC1291F7D69BB00BB0ABD /* zrle.c in Sources */,
-				DBBFC1201F7D69BB00BB0ABD /* selbox.c in Sources */,
-				DBBFC10F1F7D698800BB0ABD /* hextile.c in Sources */,
-				DBBFC1411F7D6BA400BB0ABD /* png.c in Sources */,
-				DBBFC1421F7D6BA400BB0ABD /* pngmem.c in Sources */,
-				DBBFC17C1F7D6C6800BB0ABD /* jcapistd.c in Sources */,
-				DBBFC18C1F7D6C6800BB0ABD /* jcprepct.c in Sources */,
-				DBBFC14A1F7D6BA400BB0ABD /* pngerror.c in Sources */,
-				DBBFC1271F7D69BB00BB0ABD /* sockets.c in Sources */,
-				DBBFC17F1F7D6C6800BB0ABD /* jmemmgr.c in Sources */,
-				DBBFC12B1F7D69BB00BB0ABD /* zrleoutstream.c in Sources */,
-				DBBFC1841F7D6C6800BB0ABD /* jdpostct.c in Sources */,
-				DBBFC1941F7D6C6800BB0ABD /* jquant2.c in Sources */,
-				DBBFC1091F7D698800BB0ABD /* httpd.c in Sources */,
-				DBBFC14C1F7D6BA400BB0ABD /* pngread.c in Sources */,
-				DBBFC10B1F7D698800BB0ABD /* cargs.c in Sources */,
-				DBBFC12A1F7D69BB00BB0ABD /* ultra.c in Sources */,
-				DBBFC13F1F7D6BA400BB0ABD /* pngget.c in Sources */,
-				DBBFC1A51F7D6C6800BB0ABD /* jdmarker.c in Sources */,
-				DBBFC19B1F7D6C6800BB0ABD /* jdtrans.c in Sources */,
-				DBBFC1981F7D6C6800BB0ABD /* jaricom.c in Sources */,
-				DBBFC18F1F7D6C6800BB0ABD /* jchuff.c in Sources */,
-				DBBFC10A1F7D698800BB0ABD /* auth.c in Sources */,
-				DBBFC18A1F7D6C6800BB0ABD /* jdmaster.c in Sources */,
-				DBBFC1821F7D6C6800BB0ABD /* jcparam.c in Sources */,
-				DBBFC1A11F7D6C6800BB0ABD /* jfdctfst.c in Sources */,
-				DBBFC1471F7D6BA400BB0ABD /* pngrtran.c in Sources */,
-				DBBFC1A41F7D6C6800BB0ABD /* jdcolor.c in Sources */,
-				DB86289F1F7D83F000849DFB /* arm_init.c in Sources */,
-				DBBFC1951F7D6C6800BB0ABD /* jerror.c in Sources */,
-				DBBFC1931F7D6C6800BB0ABD /* jccoefct.c in Sources */,
-				DBBFC17B1F7D6C6800BB0ABD /* jfdctflt.c in Sources */,
-				DBBFC17E1F7D6C6800BB0ABD /* jcmarker.c in Sources */,
-				DBBFC1AE1F7D6DF100BB0ABD /* d3des.c in Sources */,
-				DBBFC1A21F7D6C6800BB0ABD /* jidctflt.c in Sources */,
-				DBBFC1901F7D6C6800BB0ABD /* jcinit.c in Sources */,
-				DBBFC19A1F7D6C6800BB0ABD /* jdatadst.c in Sources */,
-				DBBFC18B1F7D6C6800BB0ABD /* jutils.c in Sources */,
-				DBBFC1961F7D6C6800BB0ABD /* jccolor.c in Sources */,
-				DBBFC1971F7D6C6800BB0ABD /* jcmaster.c in Sources */,
-				DBBFC1861F7D6C6800BB0ABD /* jdapimin.c in Sources */,
-				DBBFC1871F7D6C6800BB0ABD /* jdhuff.c in Sources */,
-				DBBFC1891F7D6C6800BB0ABD /* jfdctint.c in Sources */,
-				DBBFC1811F7D6C6800BB0ABD /* jctrans.c in Sources */,
-				DBD6065D1F7D9EE700DFB3E7 /* VNCServer.m in Sources */,
-				DBBFC1451F7D6BA400BB0ABD /* pngrutil.c in Sources */,
-				DBBFC1221F7D69BB00BB0ABD /* rfbregion.c in Sources */,
-				DBBFC10C1F7D698800BB0ABD /* corre.c in Sources */,
-				DB8628A11F7D842900849DFB /* filter_neon_intrinsics.c in Sources */,
-				DBBFC19F1F7D6C6800BB0ABD /* jdinput.c in Sources */,
-				DBBFC18D1F7D6C6800BB0ABD /* jdcoefct.c in Sources */,
-				DBBFC1831F7D6C6800BB0ABD /* jdapistd.c in Sources */,
-				DBBFC1231F7D69BB00BB0ABD /* translate.c in Sources */,
-				DBBFC12C1F7D69BB00BB0ABD /* zlib.c in Sources */,
-				DBBFC1481F7D6BA400BB0ABD /* pngwtran.c in Sources */,
-				DBBFC1101F7D698800BB0ABD /* cutpaste.c in Sources */,
-				DBBFC18E1F7D6C6800BB0ABD /* jcapimin.c in Sources */,
-				DBBFC19C1F7D6C6800BB0ABD /* jdatasrc.c in Sources */,
-				DBBFC19D1F7D6C6800BB0ABD /* jdsample.c in Sources */,
-				DBBFC1491F7D6BA400BB0ABD /* pngwutil.c in Sources */,
-				DBBFC13E1F7D6BA400BB0ABD /* pngpread.c in Sources */,
-				DBBFC1A01F7D6C6800BB0ABD /* jcarith.c in Sources */,
-				DBBFC1911F7D6C6800BB0ABD /* jidctfst.c in Sources */,
-				DBBFC1081F7D698800BB0ABD /* main.c in Sources */,
-				DBBFC1431F7D6BA400BB0ABD /* pngwio.c in Sources */,
-				DBBFC14B1F7D6BA400BB0ABD /* pngset.c in Sources */,
-				DBBFC1241F7D69BB00BB0ABD /* rfbserver.c in Sources */,
-				DBBFC1921F7D6C6800BB0ABD /* jddctmgr.c in Sources */,
-				DBBFC1281F7D69BB00BB0ABD /* scale.c in Sources */,
-				DBBFC1A71F7D6C6800BB0ABD /* jdmerge.c in Sources */,
-				DBBFC17D1F7D6C6800BB0ABD /* jdarith.c in Sources */,
-				DBBFC1AF1F7D6DF100BB0ABD /* vncauth.c in Sources */,
-				DBBFC1881F7D6C6800BB0ABD /* jcdctmgr.c in Sources */,
-				DBBFC1991F7D6C6800BB0ABD /* jdmainct.c in Sources */,
-				DBBFC1851F7D6C6800BB0ABD /* jcmainct.c in Sources */,
-				DBBFC1A31F7D6C6800BB0ABD /* jcsample.c in Sources */,
-				DBBFC1AC1F7D6DF100BB0ABD /* minilzo.c in Sources */,
-				DBBFC1A61F7D6C6800BB0ABD /* jquant1.c in Sources */,
-				DBBFC1401F7D6BA400BB0ABD /* pngrio.c in Sources */,
-				DBBFC1261F7D69BB00BB0ABD /* rre.c in Sources */,
-				DBBFC1AD1F7D6DF100BB0ABD /* turbojpeg.c in Sources */,
-				DBBFC10E1F7D698800BB0ABD /* font.c in Sources */,
-				DBBFC1441F7D6BA400BB0ABD /* pngwrite.c in Sources */,
-				DBBFC1071F7D698800BB0ABD /* draw.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DB8397FF1FF7DA8E00EA0EBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8397971FF7D45E00EA0EBD /* vncserver */;
+			targetProxy = DB8397FE1FF7DA8E00EA0EBD /* PBXContainerItemProxy */;
+		};
 		DB8628A51F7D861900849DFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DB6EE1DD1F7C5D20009B028B /* ios */;
 			targetProxy = DB8628A41F7D861900849DFB /* PBXContainerItemProxy */;
-		};
-		DB8628AA1F7D865100849DFB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DBBFC0911F7D609A00BB0ABD /* VNCServer */;
-			targetProxy = DB8628A91F7D865100849DFB /* PBXContainerItemProxy */;
 		};
 		DBD2E8B81F8A62B400C10169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1034,7 +1002,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1118,7 +1086,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1288,6 +1256,136 @@
 			};
 			name = Release;
 		};
+		DB83979F1FF7D45E00EA0EBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = "0.9.11+";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/VNCServer/libvncserver",
+					"$(PROJECT_DIR)/VNCServer/libpng",
+					"$(PROJECT_DIR)/VNCServer/libvncserver/libvncserver",
+					"$(PROJECT_DIR)/VNCServer/libvncserver/common",
+					"$(PROJECT_DIR)/VNCServer/jpeg",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB8397A01FF7D45E00EA0EBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = "0.9.11+";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/VNCServer/libvncserver",
+					"$(PROJECT_DIR)/VNCServer/libpng",
+					"$(PROJECT_DIR)/VNCServer/libvncserver/libvncserver",
+					"$(PROJECT_DIR)/VNCServer/libvncserver/common",
+					"$(PROJECT_DIR)/VNCServer/jpeg",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		DB9118DF1F7C576200C6CF5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1430,155 +1528,6 @@
 			};
 			name = Release;
 		};
-		DBBFC0981F7D609A00BB0ABD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/VNCServer/libvncserver",
-					"$(SRCROOT)/VNCServer/libvncserver/libvncserver",
-					"$(SRCROOT)/VNCServer/libvncserver/common",
-				);
-				INFOPLIST_FILE = VNCServer/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.teskalabs.cvio.VNCServer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DBBFC0991F7D609A00BB0ABD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P3Q6HRV8FN;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/VNCServer/libvncserver",
-					"$(SRCROOT)/VNCServer/libvncserver/libvncserver",
-					"$(SRCROOT)/VNCServer/libvncserver/common",
-				);
-				INFOPLIST_FILE = VNCServer/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.teskalabs.cvio.VNCServer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1600,6 +1549,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DB83979E1FF7D45E00EA0EBD /* Build configuration list for PBXNativeTarget "vncserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB83979F1FF7D45E00EA0EBD /* Debug */,
+				DB8397A01FF7D45E00EA0EBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DB9118DE1F7C576200C6CF5F /* Build configuration list for PBXProject "CatVisionIO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1614,15 +1572,6 @@
 			buildConfigurations = (
 				DBBFC0871F7D55D400BB0ABD /* Debug */,
 				DBBFC0881F7D55D400BB0ABD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DBBFC0971F7D609A00BB0ABD /* Build configuration list for PBXNativeTarget "VNCServer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DBBFC0981F7D609A00BB0ABD /* Debug */,
-				DBBFC0991F7D609A00BB0ABD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
