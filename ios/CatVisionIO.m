@@ -95,7 +95,14 @@
 	if (mVNCServer == nil)
 	{
 		CGSize size = [source getSize];
-		mVNCServer = [[VNCServer new] init:^(){return [self takeImage];} address:socketAddress size:size downScaleFactor:1];
+
+		float scale = 1;
+		if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
+		{
+			scale = [[UIScreen mainScreen] scale];
+		}
+
+		mVNCServer = [[VNCServer new] init:^(){return [self takeImage];} address:socketAddress size:size downScaleFactor:scale];
 		if (mVNCServer == nil) return NO;
 	}
 	[mVNCServer start];
