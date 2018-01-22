@@ -23,6 +23,7 @@
 	CVIOSeaCatCSR * CSR;
 	id<CVIOSource> source;
 
+	NSLock* capturedImageLock;
 	CVImageBufferRef capturedImage;
 }
 
@@ -64,7 +65,8 @@
 	
 	source = nil;
 	capturedImage = nil;
-
+	capturedImageLock = [[NSLock alloc] init];
+	
 	[SeaCatClient configureWithCSRDelegate:CSR];
 	[plugin configureSocket:socketAddress];
 
@@ -140,7 +142,8 @@
 		return;
 	}
 
-	// This is maybe a critical section b/c of manipulation with capturedImage
+	[capturedImageLock lock];
+	@try
 	{
 		if (capturedImage != nil)
 		{
@@ -150,6 +153,10 @@
 
 		capturedImage = c;
 		CVPixelBufferRetain(capturedImage);
+	}
+	@finally
+	{
+		[capturedImageLock unlock];
 	}
 
 	CGSize size = CVImageBufferGetDisplaySize(capturedImage);
@@ -179,11 +186,20 @@
 
 -(int)takeImage
 {
-	if (capturedImage == nil) return 0;
+	CVImageBufferRef image;
 
-	// This is maybe a critical section b/c of manipulation with capturedImage
-	CVImageBufferRef image = capturedImage;
-	capturedImage = nil;
+	[capturedImageLock lock];
+	@try
+	{
+		if (capturedImage == nil) return 0;
+
+		image = capturedImage;
+		capturedImage = nil;
+	}
+	@finally
+	{
+		[capturedImageLock unlock];
+	}
 
 	OSType capturedImagePixelFormat = CVPixelBufferGetPixelFormatType(image);
 	switch (capturedImagePixelFormat) {
