@@ -47,6 +47,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 /////
 
 @implementation VNCServer {
+	CGSize mySize;
 	size_t myWidth;
 	size_t myHeight;
 	size_t myLineStride; // 'Real width' including a border
@@ -78,6 +79,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	self->runPhase = 0;
 	self->imageReady = 0;
 
+	self->mySize = size;
 	self->myWidth = size.width;
 	self->myHeight = size.height;
 	self->myDownScaleFactor = downScaleFactor;
@@ -175,6 +177,16 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	}
 }
 
+- (BOOL)isSizeDifferent:(CGSize)size
+{
+	return ((size.height != mySize.height) || (size.width != mySize.width));
+}
+
+- (BOOL)isStarted
+{
+	return (runPhase != 0);
+}
+
 - (void)start
 {
 	if (self->myThread != nil)
@@ -226,6 +238,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 {
 	if (self->runPhase == 2) self->runPhase = 3;
 }
+
 
 - (void)imageReady
 {

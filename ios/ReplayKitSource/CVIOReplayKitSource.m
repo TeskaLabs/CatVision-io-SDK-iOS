@@ -30,17 +30,6 @@
 	return self;
 }
 
-- (CGSize)getSize
-{
-	CGRect screenBounds = [[UIScreen mainScreen] bounds];
-	CGFloat screenScale = [[UIScreen mainScreen] scale]; // Adjust screen size by subpixel scale
-	CGSize ret = {
-		.width = screenBounds.size.width * screenScale,
-		.height = screenBounds.size.height * screenScale,
-	};
-	return ret;
-}
-
 -(void)start
 {
 	[screenRecorder setMicrophoneEnabled:NO];

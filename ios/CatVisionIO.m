@@ -91,21 +91,6 @@
 	{
 		source = [[CVIOReplayKitSource alloc] init:self];
 	}
-	
-	if (mVNCServer == nil)
-	{
-		CGSize size = [source getSize];
-
-		float scale = 1;
-		if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
-		{
-			scale = [[UIScreen mainScreen] scale];
-		}
-
-		mVNCServer = [[VNCServer new] init:^(){return [self takeImage];} address:socketAddress size:size downScaleFactor:scale];
-		if (mVNCServer == nil) return NO;
-	}
-	[mVNCServer start];
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[source start];
@@ -165,6 +150,28 @@
 
 		capturedImage = c;
 		CVPixelBufferRetain(capturedImage);
+	}
+
+	CGSize size = CVImageBufferGetDisplaySize(capturedImage);
+
+	// If VNC Server is running with different screen size, stop it and destroy it
+	if ((mVNCServer != nil) && ([mVNCServer isSizeDifferent:size]))
+	{
+		[mVNCServer stop];
+		mVNCServer = nil;
+	}
+	
+	// If VNC Server is not initialized, initialize one
+	if (mVNCServer == nil)
+	{
+		mVNCServer = [[VNCServer new] init:^(){return [self takeImage];} address:socketAddress size:size downScaleFactor:1];
+		if (mVNCServer == nil) return;
+	}
+	
+	// If VNC Server is not started, start it
+	if (![mVNCServer isStarted])
+	{
+		[mVNCServer start];
 	}
 	
 	[mVNCServer imageReady];

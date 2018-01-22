@@ -20,6 +20,9 @@ FOUNDATION_EXPORT const unsigned char VNCServerVersionString[];
 - (id)init:(int(^)(void))takeImage address:(NSString *)socketAddress size:(CGSize)size downScaleFactor:(int)factor;
 - (void)start;
 - (void)stop;
+- (BOOL)isStarted;
+
+- (BOOL)isSizeDifferent:(CGSize)size;
 
 - (void)imageReady;
 

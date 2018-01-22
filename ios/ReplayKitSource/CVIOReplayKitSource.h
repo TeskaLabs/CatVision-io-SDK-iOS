@@ -15,6 +15,4 @@
 -(void)start;
 -(void)stop;
 
-- (CGSize)getSize;
-
 @end
