@@ -23,16 +23,6 @@
 	return self;
 }
 
-- (CGSize)getSize
-{
-	//TODO: Onbtain these values from somewhere
-	CGSize ret = {
-		.width = 640,
-		.height = 1136,
-	};
-	return ret;
-}
-
 -(void)start
 {
 }
