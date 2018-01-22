@@ -156,5 +156,5 @@ cp -r SeaCatClient/Headers/SeaCatClient ./bin/ios-Debug/CatVisionIO.framework/He
 cp -r SeaCatClient/Headers/SeaCatClient ./bin/ios-Release/CatVisionIO.framework/Headers/
 
 echo "Signing ..."
-codesign -f -s "Ales Teska" -vvv ./bin/ios-Debug/CatVisionIO.framework
-codesign -f -s "Ales Teska" -vvv ./bin/ios-Release/CatVisionIO.framework
+codesign -f -s ${CODE_SIGN_IDENTITY} -vvv ./bin/ios-Debug/CatVisionIO.framework
+codesign -f -s ${CODE_SIGN_IDENTITY} -vvv ./bin/ios-Release/CatVisionIO.framework
