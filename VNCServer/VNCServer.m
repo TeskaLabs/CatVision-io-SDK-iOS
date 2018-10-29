@@ -60,6 +60,8 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	NSString * mySocketAddress;
 	NSThread * myThread;
 	
+	NSTimeInterval myLastScreenUpdate;
+	
 	rfbScreenInfoPtr myServerScreen;
 	
 	int runPhase; // 0 .. idle, 1 .. starting, 2 .. running, 3 .. stopping
@@ -195,6 +197,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 		return;
 	}
 
+	self->myLastScreenUpdate = [[NSDate date] timeIntervalSince1970];
 	self->runPhase = 1;
 	self->myThread = [[NSThread alloc] initWithTarget:self selector:@selector(_run) object:nil];
 	[self->myThread setName:@"CVIOVNCServerThread"];
@@ -204,7 +207,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 - (void)_run
 {
 	self->runPhase = 2;
-
+	
 	while (rfbIsActive(self->myServerScreen))
 	{
 		if (self->imageReady != 0)
@@ -222,7 +225,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 		
 		long usec = self->myServerScreen->deferUpdateTime*1000;
 		rfbProcessEvents(self->myServerScreen, usec);
-		
+
 		if (self->runPhase == 3)
 		{
 			rfbShutdownServer(self->myServerScreen, (1==1));
@@ -243,6 +246,22 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 - (void)imageReady
 {
 	self->imageReady += 1;
+}
+
+- (void)_touch
+{
+	self->myLastScreenUpdate = [[NSDate date] timeIntervalSince1970];
+}
+
+
+- (void)tick
+{
+	int deltat = [[NSDate date] timeIntervalSince1970] - self->myLastScreenUpdate;
+	if (deltat > 30) // If we don't see the update for 30 seconds, issue one artifically
+	{
+		rfbMarkRectAsModified(myServerScreen, 0, 0, 1, 1);
+		[self _touch];
+	}
 }
 
 - (void)pushPixels_RGBA8888:(const unsigned char *)buffer length:(ssize_t)len row_stride:(int)s_stride
@@ -287,6 +306,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 	if (max_x == -1) return; // No update needed
 	
 	rfbMarkRectAsModified(myServerScreen, myXOffset + min_x, min_y, myXOffset + max_x + 1, max_y + 1);
+	[self _touch];
 }
 
 - (void)pushPixels_420YpCbCr8BiPlanarFullRange:(CVImageBufferRef)imageBuffer
@@ -351,7 +371,7 @@ static void setXCutText(char* str,int len, struct _rfbClientRec* cl)
 		  (int) myXOffset + (max_x >> myDownScaleFactor) + 1,
 		  (max_y >> myDownScaleFactor) + 1
     );
-
+	[self _touch];
 }
 
 @end

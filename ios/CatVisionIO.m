@@ -22,6 +22,7 @@
 	CVIOSeaCatPlugin * plugin;
 	CVIOSeaCatCSR * CSR;
 	id<CVIOSource> source;
+	NSTimer * timer;
 
 	NSLock* capturedImageLock;
 	CVImageBufferRef capturedImage;
@@ -64,6 +65,7 @@
 	CSR = [[CVIOSeaCatCSR alloc] init];
 	
 	source = nil;
+	timer = nil;
 	capturedImage = nil;
 	capturedImageLock = [[NSLock alloc] init];
 	
@@ -110,7 +112,27 @@
 		[SeaCatClient connect];
 	});
 
+	if (self->timer != nil)
+	{
+		[self->timer invalidate];
+		self->timer = nil;
+	}
+	self->timer = [NSTimer scheduledTimerWithTimeInterval: 2.0
+												  target: self
+												selector:@selector(onTick:)
+												userInfo: nil
+												  repeats:YES
+	];
+	
 	return YES;
+}
+
+-(void)onTick:(NSTimer *)timer
+{
+	if (mVNCServer != nil)
+	{
+		[mVNCServer tick];
+	}
 }
 
 - (BOOL)stop
@@ -130,6 +152,10 @@
 	}
 	
 	mStarted = NO;
+
+	[self->timer invalidate];
+	self->timer = nil;
+
 	return YES;
 }
 

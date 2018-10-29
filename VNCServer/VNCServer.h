@@ -28,5 +28,6 @@ FOUNDATION_EXPORT const unsigned char VNCServerVersionString[];
 
 - (void)pushPixels_RGBA8888:(const unsigned char *)buffer length:(ssize_t)length row_stride:(int)s_stride;
 - (void)pushPixels_420YpCbCr8BiPlanarFullRange:(CVImageBufferRef)image;
+- (void)tick;
 
 @end

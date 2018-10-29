@@ -18,7 +18,6 @@
 		DB6EE1E31F7C5D20009B028B /* CatVisionIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6EE1E11F7C5D20009B028B /* CatVisionIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB71F1F51F8A5F6B00820416 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3EFDB61F8166B10070E432 /* ReplayKit.framework */; };
 		DB71F1F91F8A5F6B00820416 /* CVIOBroadcastSampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71F1F81F8A5F6B00820416 /* CVIOBroadcastSampleHandler.m */; };
-		DB71F1FD1F8A5F6B00820416 /* cvio-broadcast-ext.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB71F1F41F8A5F6A00820416 /* cvio-broadcast-ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DB71F2031F8A602F00820416 /* CVIOBroadcastSampleSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71F2011F8A602F00820416 /* CVIOBroadcastSampleSource.m */; };
 		DB71F2061F8A60EF00820416 /* CatVisionIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6EE1DE1F7C5D20009B028B /* CatVisionIO.framework */; };
 		DB8397861FF7D1CF00EA0EBD /* libseacatclientios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8397851FF7D1CF00EA0EBD /* libseacatclientios.a */; };
@@ -152,13 +151,6 @@
 			remoteGlobalIDString = DB6EE1DD1F7C5D20009B028B;
 			remoteInfo = ios;
 		};
-		DBD2E8B71F8A62B400C10169 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DB71F1F31F8A5F6A00820416;
-			remoteInfo = "cvio-broadcast-ext";
-		};
 		DBD2E8B91F8A62BF00C10169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9118DB1F7C576200C6CF5F /* Project object */;
@@ -187,17 +179,6 @@
 				DB8628A31F7D861900849DFB /* CatVisionIO.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBDB53E61F82F2A600B8E776 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				DB71F1FD1F8A5F6B00820416 /* cvio-broadcast-ext.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -700,13 +681,11 @@
 				DBBFC0711F7D55D400BB0ABD /* Frameworks */,
 				DBBFC0721F7D55D400BB0ABD /* Resources */,
 				DB8628A61F7D861900849DFB /* Embed Frameworks */,
-				DBDB53E61F82F2A600B8E776 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				DB8397FF1FF7DA8E00EA0EBD /* PBXTargetDependency */,
-				DBD2E8B81F8A62B400C10169 /* PBXTargetDependency */,
 				DB8628A51F7D861900849DFB /* PBXTargetDependency */,
 			);
 			name = app;
@@ -937,11 +916,6 @@
 			isa = PBXTargetDependency;
 			target = DB6EE1DD1F7C5D20009B028B /* ios */;
 			targetProxy = DB8628A41F7D861900849DFB /* PBXContainerItemProxy */;
-		};
-		DBD2E8B81F8A62B400C10169 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DB71F1F31F8A5F6A00820416 /* cvio-broadcast-ext */;
-			targetProxy = DBD2E8B71F8A62B400C10169 /* PBXContainerItemProxy */;
 		};
 		DBD2E8BA1F8A62BF00C10169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1491,7 +1465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P3Q6HRV8FN;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1559,7 +1533,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P3Q6HRV8FN;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (

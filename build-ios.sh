@@ -119,6 +119,8 @@ function FAT
 	rm "${FATLIB_DIR}/${LIB}"
 
 	${LIPO} -create ${PLATFORM_LIBS[@]} -output "${FATLIB_DIR}/${LIB}"
+
+	echo "Output is in ${FATLIB_DIR}/${LIB}"
 }
 
 
